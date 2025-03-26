@@ -6,14 +6,19 @@ import Image from "astro/components/Image.astro";
     Link: https://svgl.app/
 */
 const logos = [
-  { src: "/logos/astro.svg", alt: "AstroJS Logo" },
+  {src: "/logos/blender.svg", alt: "Blender Logo"},
+  {src: "/logos/unreal.svg", alt: "Unreal Logo"},
+  {src: "/logos/davinci-resolve.svg", alt: "Davinci Resolve Logo"},
+  {src: "/logos/figma.svg", alt: "Figma Logo"},
+  {src: "/logos/adobe.svg", alt: "adobe Logo"},
+  { src: "/logos/astro.svg", alt:   "AstroJS Logo" },
   { src: "/logos/react.svg", alt: "ReactJS Logo" },
-  { src: "/logos/next.svg", alt: "NextJS" },
-  { src: "/logos/vercel.svg", alt: "Vercel Logo" },
+  // { src: "/logos/next.svg", alt: "NextJS" },
+  // { src: "/logos/vercel.svg", alt: "Vercel Logo" },
   { src: "/logos/tailwindcss.svg", alt: "TailwindCSS Logo" },
-  { src: "/logos/typescript.svg", alt: "TypeScript Logo" },
-  { src: "/logos/aws.svg", alt: "AWS Logo" },
-  { src: "/logos/supabase.svg", alt: "Supabase Logo" },
+  // { src: "/logos/typescript.svg", alt: "TypeScript Logo" },
+  // { src: "/logos/aws.svg", alt: "AWS Logo" },
+  // { src: "/logos/supabase.svg", alt: "Supabase Logo" },
   { src: "/logos/openai_dark.svg", alt: "OpenAI Logo" },
 ];
 ---
@@ -24,7 +29,7 @@ const logos = [
   <h2
     class="w-full max-w-xl sm:text-center text-lg sm:text-2xl md:text-4xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-primary via-foreground to-foreground"
   >
-    Top Technologies I Use Everyday
+    Top Technologies I Use For bringing you vision to life
   </h2>
   <p
     class="w-full max-w-xl text-muted-foreground sm:text-center text-normal sm:text-lg md:text-xl font-light tracking-tighter text-balance"
@@ -42,7 +47,7 @@ const logos = [
               src={logo.src}
               alt={logo.alt}
               width={32}
-              height={32}
+              // height={32}
               loading="eager"
               class="object-contain"
             />

@@ -1,41 +1,36 @@
 {
   "basics": {
-    "name": "Gonzalo Chalé",
-    "label": "Systems Engineer",
-    "image": "https://github.com/gonzalochale.png",
-    "summary": "This is a starter template web portfolio. It is designed to be a starting point to showcase your work and help you stand out from the crowd. Perfect for developers, designers, and other professionals.",
+    "name": "Salman Ahmed",
+    "label": "3d artist, animator & product visualizer | Graphics & UI/UX Designer | Forntend Developer | Digital Marketer",
+    "image": "https://github.com/salman-ahmed1.png",
+    "summary": "I'm a self-taught creative professional with expertise in 3D art, animation, product visualization, graphics, UI/UX design, frontend development, and digital marketing.",
     "location": {
-      "city": "Cancún",
-      "countryCode": "MX",
-      "country": "México"
+      "city": "sylhet",
+      "countryCode": "BD",
+      "country": "Bangladesh"
     }
   },
   "connect": {
       "sectionLabel": "Experience",
       "socials": [
-        {
-          "network": "X (Formerly Twitter)",
-          "label": "X (Formerly Twitter)",
-          "username": "gonzalochale",
-          "url": "https://x.com/gonzalochale"
-        },
+       
         {
           "network": "GitHub",
           "label": "GitHub",
-          "username": "gonzalochale",
-          "url": "https://github.com/gonzalochale"
+          "username": "salman-ahmed1",
+          "url": "https://github.com/salman-ahmed1"
         },
         {
           "network": "LinkedIn",
           "label": "LinkedIn",
-          "username": "gonzalochale",
+          "username": "salman-ahmed",
           "url": "https://www.linkedin.com/in/gonzalochale/"
         },
         {
           "network": "YouTube",
           "label": "YouTube",
-          "username": "chalegonzalo",
-          "url": "https://www.youtube.com/@chalegonzalo"
+          "username": "salman-ahmed",
+          "url": "https://www.youtube.com/salman"
         }
       ]
     },
@@ -43,29 +38,18 @@
       "sectionLabel": "Work experience",
       "jobs": [
         {
-          "company": "Acme",
-          "position": "Software Engineer",
-          "startDate": "2020-01-01",
-          "endDate": "2024-07-31",
-          "summary": "I worked on the Acme team, where I helped build the Y feature. I was responsible for Z, which involved A, B, and C.",
+          "company": "Freelancer",
+          "position": "3D Artist, Animator & Product Visualizer",
+          "startDate": "2024-01-01",
+          "endDate": "Ongoing",
+          "summary": "I worked with various individuals , where I helped bring visions to life. I was responsible for visualizing product, from acrylic products to 3d games.",
           "highlights": [
-            "Developed a new feature for the Acme platform",
-            "Worked on the Y project, which involved A, B, and C",
-            "Collaborated with the Z team to improve the X platform"
-          ]
-        },
-        {
-          "company": "Y (Formerly X)",
-          "position": "Software Engineer",
-          "startDate": "2018-01-01",
-          "endDate": "2019-12-31",
-          "summary": "I worked on the Y team, where I helped build the Z feature. I was responsible for A, which involved B, C, and D.",
-          "highlights": [
-            "Developed a new feature for the Y platform",
-            "Worked on the Z project, which involved B, C, and D",
-            "Collaborated with the A team to improve the Y platform"
+            "Designed acrylic product for showcase at an exhibition",
+            "Worked on 3D Game promotion video ",
+            "product label sizings and packaging"
           ]
         }
+       
       ]
     },
   "stack": {
@@ -96,7 +80,7 @@
           {
             "network": "GitHub",
             "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
+            "url": "https://github.com/salman-ahmed1/"
           },
           {
             "network": "Demo",
@@ -113,7 +97,7 @@
           {
             "network": "GitHub",
             "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
+            "url": "https://github.com/salman-ahmed1/"
           },
           {
             "network": "Demo",
@@ -130,7 +114,7 @@
           {
             "network": "GitHub",
             "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
+            "url": "https://github.com/salman-ahmed1/"
           },
           {
             "network": "Demo",
