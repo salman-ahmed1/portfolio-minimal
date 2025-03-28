@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 
+
 interface Props {
   title: string;
 }
@@ -10,7 +11,8 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+</script>
     <SEO
       title="Salman ahmed 3D portfolio"
       description="Salman ahmed a 3d artist, animator & product visualizer | Graphics & UI/UX Designer | Forntend Developer | Digital Marketer helping you bringing your visions to life"
@@ -38,10 +40,13 @@ const { title } = Astro.props;
       data-domain="salmanahmed.vercel.app"
      
     ></script>
+    
   </head>
+  
   <body
     class="relative flex flex-col w-full min-h-dvh justify-center items-center bg-background"
   >
+  
     <slot />
   </body>
 </html>
