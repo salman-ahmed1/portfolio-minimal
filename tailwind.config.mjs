@@ -39,6 +39,7 @@ export default {
         card: "hsl(var(--card))",
         "dark-card": "hsl(var(--dark-card))",
       },
+      
     },
   },
   plugins: [addVariablesForColors],
