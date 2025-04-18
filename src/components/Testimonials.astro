@@ -1,0 +1,154 @@
+---
+const testimonials = [
+  {
+    name: "Anthony Freymond",
+    title: "IOS Game Developer",
+    text: "This is the best service I've ever used!",
+    link: "https://www.3danimationreview.com/",
+    src: "/assets/3d-animation-review-salman-ahmed.webp",
+    alt: "3D animation review",
+    hoverText: "3D Animation",
+  },
+  {
+    name: "Dave",
+    title: "Product Designer",
+    text: "This is the best service I've ever used!",
+    link: "https://www.3danimationreview.com/",
+    src: "/assets/3d-render-review-salman-ahmed.webp",
+    alt: "3D render review",
+    hoverText: "3D Render",
+  },
+  {
+    name: "Anthony Freymond",
+    title: "IOS Game Developer",
+    text: "This is the best service I've ever used!",
+    link: "https://www.3danimationreview.com/",
+    src: "/assets/3d-animator-review-salman-ahmed.webp",
+    alt: "3D animation review",
+    hoverText: "3D Animation",
+  },
+];
+---
+
+<!-- 
+<article
+      class="overflow-hidden bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:row-start-3 border h-[300px] border-dark-border rounded-[1rem] px-4 group"
+    >
+      <div
+        class="w-full h-fit max-h-[500px] flex flex-col justify-center select-none overflow-hidden"
+      >
+        <div
+          class="w-full h-max flex flex-col justify-center items-center gap-[4rem] animate-vertical-slide"
+        >
+          {
+            testimonials.concat(testimonials).map((testimonial) => (
+              <article class="w-full max-w-sm flex flex-col gap-2 items-center justify-center size-20 border border-dark-border bg-background rounded-[1rem] px-4 py-2">
+                <div class="w-full flex items-center justify-start gap-2">
+                  {/* <Image
+                    src={testimonial.src}
+                    alt={testimonial.alt}
+                    width={32}
+                    height={32}
+                    loading="lazy"
+                    class="object-contain w-8 h-8 rounded-full bg-secondary"
+                  /> */}
+                  <span class="w-7 h-7 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                  <h1 class="text-sm font-medium">{testimonial.name}</h1>
+                </div>
+                <p class="w-full text-left text-muted-foreground text-xs">
+                  {testimonial.testimonial}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </article> -->
+<section class="py-12 bg-gray-50 max-w-screen-2xl w-full sm:py-16 lg:py-20">
+  <div class="px-4 mx-auto max-w-2xl sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center relative">
+      <div class="text-center">
+        <p class="text-lg font-medium text-gray-600">
+          2,157 people have said how good Rareblocks
+        </p>
+        <h2
+          class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl"
+        >
+          Our happy clients say about us
+        </h2>
+      </div>
+
+      <div class="mt-8 text-center md:mt-16 md:order-3">
+        <a
+          href="#"
+          title=""
+          class="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"
+        >
+          Check all 2,157 reviews
+        </a>
+      </div>
+      <div
+      class="w-screen max-w-screen-2xl h-full absolute top-0  mx-auto rounded-3xl opacity-30 blur-lg filter"
+      style="background: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)"
+    >
+    </div>
+      <div
+        class="relative mt-10 md:mt-24 w-full flex flex-col h-screen md:order-2 overflow-hidden"
+      >
+        
+
+        <div class="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6 animate-vertical-slide">
+          <!--  -->
+
+          {
+            testimonials.concat(testimonials).map((testimonial, index) => (
+              <a
+                href={testimonial.link}
+                class={`group  relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 ${index === testimonials.length ? "hidden" : ""}`}
+              >
+                {/* Top Image */}
+                <img
+                  src={testimonial.src}
+                  alt={testimonial.alt}
+                  class=" w-full object-cover"
+                />
+
+                {/* White Background Content */}
+                <div class="bg-white p-8 text-center mb-6">
+                  {/* Stars */}
+                  <div class="mb-4 flex justify-center text-amber-400">
+                    {[...Array(5)].map(() => (
+                      <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Testimonial Text */}
+                  <p class="my-4 text-xl italic text-gray-700">
+                    "{testimonial.text}"
+                  </p>
+
+                  {/* Name and Title */}
+                  <div class="mt-2">
+                    <p class="font-bold text-lg text-gray-900">
+                      {testimonial.name}
+                    </p>
+                    <p class="text-base text-gray-600">{testimonial.title}</p>
+                  </div>
+                </div>
+
+                {/* Hover Overlay */}
+                <div class="absolute inset-0 flex items-center justify-center bg-amber-400/90 opacity-0 transition-opacity group-hover:opacity-100">
+                  <span class="text-xl font-bold text-gray-900">
+                    {testimonial.hoverText}
+                  </span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

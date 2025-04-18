@@ -4,38 +4,6 @@
   Link: https://shots.so/
 */
 
-const testimonials = [
-  {
-    name: "Alice Smith",
-    testimonial: "Your work is truly outstanding!",
-    src: "/",
-    alt: "Logo",
-  },
-  {
-    name: "Michael Johnson",
-    testimonial: "Exceptional quality and attention to detail.",
-    src: "/",
-    alt: "Logo",
-  },
-  {
-    name: "Emily Davis",
-    testimonial: "Incredible results!",
-    src: "/",
-    alt: "Logo",
-  },
-  {
-    name: "Chris Lee",
-    testimonial: "Your creativity and skill are unmatched.",
-    src: "/",
-    alt: "Logo",
-  },
-  {
-    name: "Sophia Brown",
-    testimonial: "Impressive work and great service.",
-    src: "/",
-    alt: "Logo",
-  },
-];
 
 import Image from "astro/components/Image.astro";
 ---
@@ -55,33 +23,26 @@ import Image from "astro/components/Image.astro";
   </p>
   <div class="z-10 w-full grid grid-cols-1 md:grid-cols-5 grid-rows-6 gap-2">
     <article
-      class="overflow-hidden relative bg-dark-card col-span-1 md:col-span-3 md:row-span-2 border h-[300px] border-dark-border rounded-[1rem] flex flex-col lg:flex-row lg:gap-3"
+      class=" relative bg-dark-card col-span-1 md:col-span-3 md:row-span-2 border border-dark-border rounded-[1rem] flex flex-col lg:flex-row lg:gap-3"
     >
       <div class="flex flex-col gap-2 w-full items-start p-4 tetx-left">
         <h3
           class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
         >
-         1 You Project Here
+         Beverage Product visualization & animation
         </h3>
         <p
           class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
         >
-          Your project description here.
+          Realistic 100% environment friendly & 0% waste simulation animatinos.
         </p>
       </div>
-      <div class="aspect-video">
-        <Image
-          src="/assets/mockup1.png"
-          alt="Mockup Project"
-          loading="lazy"
-          width={1920}
-          height={1080}
-          class="object-contain w-full h-full rounded-md"
-        />
+      <div class="aspect-video hover:scale-125 transition-all duration-300 ease-in-out object-fill">
+        <iframe class="border border-dark-border rounded-2xl h-full w-full"  src="https://www.youtube-nocookie.com/embed/dwy1i7O-N6o?si=QTIvlmu7wyaZApyG&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </article>
     <article
-      class="overflow-hidden group bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:col-start-4 h-[300px] border border-dark-border rounded-[1rem] p-4 flex flex-col flex-1 gap-2 justify-center items-center"
+      class="overflow-hidden group bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:col-start-4  border border-dark-border rounded-2xl p-4 flex flex-col flex-1 gap-2 justify-center items-center"
     >
       <div
         class="w-fit rounded-full bg-background px-4 py-2 flex justify-center items-center rotate-12 group-hover:rotate-0 border transition-all duration-300 ease-in-out"
@@ -120,93 +81,48 @@ import Image from "astro/components/Image.astro";
         </span>
       </div>
     </article>
+    
     <article
-      class="overflow-hidden bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:row-start-3 border h-[300px] border-dark-border rounded-[1rem] px-4 group"
+      class=" bg-dark-card col-span-1 md:col-span-3 md:row-span-2 md:row-start-3 flex flex-col lg:flex-row lg:gap-3"
     >
-      <div
-        class="w-full h-fit max-h-[500px] flex flex-col justify-center select-none overflow-hidden"
-      >
-        <div
-          class="w-full h-max flex flex-col justify-center items-center gap-[4rem] animate-vertical-slide"
+      <div class="flex flex-col gap-2  items-start p-4 tetx-left">
+        <h3
+          class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
         >
-          {
-            testimonials.concat(testimonials).map((testimonial) => (
-              <article class="w-full max-w-sm flex flex-col gap-2 items-center justify-center size-20 border border-dark-border bg-background rounded-[1rem] px-4 py-2">
-                <div class="w-full flex items-center justify-start gap-2">
-                  {/* <Image
-                    src={testimonial.src}
-                    alt={testimonial.alt}
-                    width={32}
-                    height={32}
-                    loading="lazy"
-                    class="object-contain w-8 h-8 rounded-full bg-secondary"
-                  /> */}
-                  <span class="w-7 h-7 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                  <h1 class="text-sm font-medium">{testimonial.name}</h1>
-                </div>
-                <p class="w-full text-left text-muted-foreground text-xs">
-                  {testimonial.testimonial}
-                </p>
-              </article>
-            ))
-          }
-        </div>
+          Product visualization
+        </h3>
+        <p
+          class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
+        >
+          Modelling, rendering & animations for your product.
+        </p>
+      </div>
+      <div class="aspect-video hover:scale-125 transition-all duration-300 ease-in-out">
+        <iframe class="border border-dark-border rounded-2xl h-full w-full" width="560" height="315" src="https://www.youtube-nocookie.com/embed/S47IffiTPPg?si=7XEXdFQJvyiTwkz6&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </article>
     <article
-      class="overflow-hidden bg-dark-card col-span-1 md:col-span-3 md:row-span-2 md:col-start-3 md:row-start-3 border h-[300px] border-dark-border rounded-[1rem] flex flex-col lg:flex-row lg:gap-3"
+      class=" bg-dark-card col-span-1 md:col-span-3 md:row-span-2 md:row-start-5 flex flex-col lg:flex-row lg:gap-3"
     >
       <div class="flex flex-col gap-2 w-full items-start p-4 tetx-left">
         <h3
           class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
         >
-          You Project Here
+          Enviournment Rendering
         </h3>
         <p
           class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
         >
-          Your project description here.
+          Realistic environment rendering and simualtion in unreal engine 5.
         </p>
       </div>
-      <div class="aspect-video">
-        <Image
-          src="/assets/mockup2.png"
-          alt="Mockup Project"
-          loading="lazy"
-          width={1920}
-          height={1080}
-          class="object-contain w-full h-full rounded-md"
-        />
+      <div class="aspect-video  hover:scale-125 transition-all duration-300 ease-in-out">
+        <iframe class="border border-dark-border rounded-2xl h-full w-full"  src="https://www.youtube.com/embed/HksQeYXrymc?si=8z_je_rlRTk_MfdD&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+       
       </div>
     </article>
     <article
-      class="overflow-hidden bg-dark-card col-span-1 md:col-span-3 md:row-span-2 md:row-start-5 border h-[300px] border-dark-border rounded-[1rem] flex flex-col lg:flex-row lg:gap-3"
-    >
-      <div class="flex flex-col gap-2 w-full items-start p-4 tetx-left">
-        <h3
-          class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
-        >
-          You Project Here
-        </h3>
-        <p
-          class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
-        >
-          Your project description here.
-        </p>
-      </div>
-      <div class="aspect-video">
-        <Image
-          src="/assets/mockup3.png"
-          alt="Mockup Project"
-          loading="lazy"
-          width={1920}
-          height={1080}
-          class="object-contain w-full h-full rounded-md"
-        />
-      </div>
-    </article>
-    <article
-      class="overflow-hidden bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:col-start-4 md:row-start-5 border h-[300px] border-dark-border rounded-[1rem]"
+      class="overflow-hidden bg-dark-card col-span-1 md:col-span-2 md:row-span-2 md:col-start-4 md:row-start-5 border-dark-border rounded-2xl"
     >
       <div
         class="w-full h-full flex flex-col gap-5 justify-center items-center"
