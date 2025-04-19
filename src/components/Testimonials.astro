@@ -69,7 +69,7 @@ const testimonials = [
     <div class="flex flex-col items-center relative">
       <div class="text-center">
         <p class="text-lg font-medium text-gray-600">
-          2,157 people have said how good Rareblocks
+          Client Success Stories
         </p>
         <h2
           class="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl"
@@ -84,8 +84,9 @@ const testimonials = [
           title=""
           class="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"
         >
-          Check all 2,157 reviews
+        All projects completed with <strong class="font-extrabold text-lg text-primary">5-star</strong> ratings on Upwork 
         </a>
+        <p class="text-sm font-medium text-gray-600 my-2"> <strong class="font-extrabold text-lg text-primary">100%</strong> client satisfaction rate</p>
       </div>
       <div
       class="w-screen max-w-screen-2xl h-full absolute top-0  mx-auto rounded-3xl opacity-30 blur-lg filter"
@@ -97,14 +98,14 @@ const testimonials = [
       >
         
 
-        <div class="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6 animate-vertical-slide">
+        <div class="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6 animate-vertical-slide p-4">
           <!--  -->
 
           {
             testimonials.concat(testimonials).map((testimonial, index) => (
               <a
                 href={testimonial.link}
-                class={`group  relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 ${index === testimonials.length ? "hidden" : ""}`}
+                class={`group  relative overflow-hidden rounded-2xl drop-shadow-lg transition-all duration-300 hover:scale-105 ${index === testimonials.length ? "hidden" : ""}`}
               >
                 {/* Top Image */}
                 <img
