@@ -3,7 +3,7 @@ const testimonials = [
   {
     name: "Anthony Freymond",
     title: "IOS Game Developer",
-    text: "This is the best service I've ever used!",
+    text: "Understood my vision, Communicated well and delivered great and timely results.", 
     link: "https://www.3danimationreview.com/",
     src: "/assets/3d-animation-review-salman-ahmed.webp",
     alt: "3D animation review",
@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Dave",
     title: "Product Designer",
-    text: "This is the best service I've ever used!",
+    text: "Very Talanted Cordial and pleasure to work with", 
     link: "https://www.3danimationreview.com/",
     src: "/assets/3d-render-review-salman-ahmed.webp",
     alt: "3D render review",
@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Anthony Freymond",
     title: "IOS Game Developer",
-    text: "This is the best service I've ever used!",
+    text: "Did an amazing job for shift2 advert of my game",
     link: "https://www.3danimationreview.com/",
     src: "/assets/3d-animator-review-salman-ahmed.webp",
     alt: "3D animation review",
@@ -98,24 +98,24 @@ const testimonials = [
       >
         
 
-        <div class="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6 animate-vertical-slide p-4">
+        <div class="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6 animate-vertical-slide p-8">
           <!--  -->
 
           {
             testimonials.concat(testimonials).map((testimonial, index) => (
               <a
                 href={testimonial.link}
-                class={`group  relative overflow-hidden rounded-2xl drop-shadow-lg transition-all duration-300 hover:scale-105 ${index === testimonials.length ? "hidden" : ""}`}
+                class={`group relative overflow-hidden rounded-2xl drop-shadow-lg transition-transform duration-300  ${index === testimonials.length ? "hidden" : ""}`}
               >
                 {/* Top Image */}
                 <img
                   src={testimonial.src}
                   alt={testimonial.alt}
-                  class=" w-full object-cover"
+                  class="w-full object-cover group-hover:scale-105 transition-transform rounded-t-3xl duration-300"
                 />
 
                 {/* White Background Content */}
-                <div class="bg-white p-8 text-center mb-6">
+                <div class="bg-white p-8 text-center rounded-b-3xl mb-6 group-hover:scale-105 transition-transform duration-300">
                   {/* Stars */}
                   <div class="mb-4 flex justify-center text-amber-400">
                     {[...Array(5)].map(() => (
@@ -137,13 +137,6 @@ const testimonials = [
                     </p>
                     <p class="text-base text-gray-600">{testimonial.title}</p>
                   </div>
-                </div>
-
-                {/* Hover Overlay */}
-                <div class="absolute inset-0 flex items-center justify-center bg-amber-400/90 opacity-0 transition-opacity group-hover:opacity-100">
-                  <span class="text-xl font-bold text-gray-900">
-                    {testimonial.hoverText}
-                  </span>
                 </div>
               </a>
             ))
