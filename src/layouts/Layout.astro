@@ -7,14 +7,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLTE84V97Q"></script>
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  
 
 <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
 
