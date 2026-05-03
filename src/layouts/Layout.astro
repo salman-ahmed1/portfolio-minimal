@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import SpeedInsights from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
   title: string;
@@ -69,6 +70,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
   
     <slot />
     <SpeedInsights />
+    <Analytics />
   </body>
 </html>
 
