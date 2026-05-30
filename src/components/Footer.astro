@@ -1,113 +1,77 @@
 ---
 const socials = [
-  // {
-  //   network: "X (Formerly Twitter)",
-  //   label: "X (Formerly Twitter)",
-  //   username: "gonzalochale",
-  //   url: "https://x.com/gonzalochale",
-  // },
   {
-    network: "GitHub",
     label: "GitHub",
-    username: "salman-ahemd1",
     url: "https://github.com/salman-ahmed1/",
   },
   {
-    network: "Upwork",
     label: "Upwork",
-    username: "salman ahemd",
     url: "https://www.upwork.com/freelancers/~0164f36b550ce63d69",
   },
   {
-    network: "LinkedIn",
     label: "LinkedIn",
-    username: "salman ahmed",
     url: "https://www.linkedin.com/in/salman-ahmed-designer",
   },
   {
-    network: "YouTube",
     label: "YouTube",
-    username: "salmam=n ahmed",
     url: "https://www.youtube.com/@salmanahmed3d",
   },
 ];
-
-
 ---
 
-<footer
-  class="w-full max-w-screen-2xl bg-foreground px-4 pt-20 flex flex-col gap-10 justify-between items-center"
->
-  <span
-    class="text-white text-sm font-medium leading-none peer-disabled:cursor-not-allowed
-  peer-disabled:opacity-70 flex items-center gap-2"
-  >
-    Salman Ahmed, 3D Artist, Product Modeller & Animator, Graphics & UI/UX Designer.
-  </span>
-  <div
-    class="flex flex-wrap gap-5 h-full items-center justify-center pointer-events-auto"
-  >
-    {
-      socials.map((social) => (
+<footer class="dark-section relative w-full overflow-hidden px-4 pb-10 pt-8 sm:px-6 lg:px-8">
+  <div class="dark-panel mx-auto w-full max-w-7xl rounded-[2rem] border px-6 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:px-8 sm:py-10">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <span class="dark-kicker text-xs font-semibold uppercase tracking-[0.38em]">
+          Salman Ahmed
+        </span>
+        <h3 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
+          3D visuals, motion, and
+          <span class="dark-highlight">digital design</span>
+          built to present products clearly.
+        </h3>
+        <p class="dark-body mt-4 max-w-xl text-base leading-7 sm:text-lg">
+          Available for
+          <span class="font-semibold text-white">product visualization</span>,
+          animation, design, and frontend work with a
+          <span class="dark-highlight font-semibold">clean, collaborative process</span>
+          from concept to delivery.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4 lg:items-end">
         <a
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group flex items-center text-muted-foreground text-sm font-medium leading-none hover:text-white transition-all duration-300 ease-in-out"
+          href="mailto:hello@salmanahmed.design"
+          class="text-lg font-semibold text-white underline decoration-white/20 underline-offset-4 transition-colors duration-200 hover:text-[#d8ccff]"
         >
-          {social.label}
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            class="opacity-0 group-hover:opacity-100 translate-x-[-1] group-hover:translate-x-1 group-hover:-rotate-45 transition-all duration-300 ease-in-out"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-              fill="currentColor"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-            />
-          </svg>
+          hello@salmanahmed.design
         </a>
-      ))
-    }
-  </div>
-  <div class="w-full pointer-events-none select-none text-white"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <div class="flex flex-wrap gap-3">
+          {
+            socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 bg-black/20 px-4 py-2 text-sm font-semibold text-white/96 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+              >
+                {social.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
 
-<svg
-
-   viewBox="0 0 351 35"
-   version="1.1"
-   id="svg1"
-   xml:space="preserve"
-   xmlns="http://www.w3.org/2000/svg"
-><defs
-     id="defs1" /><g
-     id="layer1"
-     transform="translate(-28.177428,-140.76228)"><text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.7204px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0.090392px;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:181.338;display:inline;fill:#ffffff;stroke-width:15.5403;stroke-linecap:square;paint-order:stroke fill markers"
-       x="28.662415"
-       y="115.66801"
-       id="text1"
-       transform="matrix(2.1660284,0,0,2.1660284,-35.92165,-77.103344)"><tspan
-         x="28.662415"
-         y="115.66801"
-         id="tspan6">SALMAN A<tspan
-   dx="0.69138283"
-   style="letter-spacing:-0.600985px"
-   id="tspan1">HM</tspan><tspan
-   dx="-0.047646224"
-   style="letter-spacing:-0.553346px"
-   id="tspan2">E</tspan><tspan
-   dx="-0.32492363"
-   style="letter-spacing:-0.228423px;word-spacing:0px"
-   id="tspan4">D</tspan></tspan></text></g></svg>
-        
-
-
+    <div class="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="dark-body text-sm leading-6">
+        <span class="font-semibold text-white">Salman Ahmed</span>, 3D Artist,
+        Product Modeller, Animator, Graphics Designer, and UI/UX Designer.
+      </p>
+      <p class="dark-muted text-sm leading-6">
+        Built for clear presentation and readable content.
+      </p>
+    </div>
   </div>
 </footer>

@@ -10,24 +10,23 @@ import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="Struggling with flat visuals? Get stunning 3d animation, modelling, & product visualization that captivates customers & boosts sales.">
-  <main
-    class="relative w-full flex flex-col justify-start items-center pattern"
-  >
-    <Header />
-    <Hero />
-    <Stack />
-    <Projects />
-    <Testimonials/>
-    <About />
-    <Footer />
+  <main class="relative flex w-full flex-col items-center justify-start bg-background">
+    <section class="w-full bg-[#050507]">
+      <Header />
+      <Hero />
+    </section>
+    <div id="process" class="w-full">
+      <Stack />
+    </div>
+    <div id="portfolio" class="w-full">
+      <Projects />
+    </div>
+    <div id="stories" class="w-full">
+      <Testimonials />
+    </div>
+    <div id="contact" class="w-full">
+      <About />
+      <Footer />
+    </div>
   </main>
 </Layout>
-
-<style>
-  .pattern {
-    background-color: #ffffff00;
-    background-image: radial-gradient(circle at top center, #f5fdffa6 70px, #ffffff4d), repeating-radial-gradient(circle at top center, #ffffff00, #ffffff3b, 200px, #00000000 0, #eaeaea00 201px);
-    background-blend-mode: multiply;
-    
-  }
-</style>

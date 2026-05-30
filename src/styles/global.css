@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 252, 100%, 64%;
+    --secondary: 254, 100%, 73%;
+    --background: 0, 0%, 100%;
+    --foreground: 0, 0%, 9%;
+    --card: 0, 0%, 98%;
+    --dark-card: 0, 0%, 7%;
+    --muted: 0, 0%, 92%;
+    --muted-foreground: 0, 0%, 40%;
+    --accent: 0, 0%, 92%;
+    --border: 220 13% 91%;
+    --dark-border: 0, 0%, 11%;
+    --hero-bg: 240 17% 3%;
+    --hero-panel: 240 14% 7%;
+    --hero-panel-soft: 240 10% 11%;
+    --hero-text-strong: 0 0% 100%;
+    --hero-text-body: 240 17% 92%;
+    --hero-text-muted: 240 10% 79%;
+    --hero-text-kicker: 259 100% 87%;
+    --hero-text-highlight: 260 100% 91%;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Geist";
+    src: url("/fonts/GeistVF.woff") format("woff");
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: "Geist", system-ui, sans-serif;
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .dark-section {
+    background-color: hsl(var(--hero-bg));
+    color: hsl(var(--hero-text-strong));
+  }
+
+  .dark-panel {
+    background-color: hsl(var(--hero-panel) / 0.84);
+    color: hsl(var(--hero-text-strong));
+    border-color: hsl(0 0% 100% / 0.1);
+  }
+
+  .dark-panel-soft {
+    background-color: hsl(var(--hero-panel-soft) / 0.82);
+    color: hsl(var(--hero-text-strong));
+    border-color: hsl(0 0% 100% / 0.08);
+  }
+
+  .dark-kicker {
+    color: hsl(var(--hero-text-kicker));
+  }
+
+  .dark-body {
+    color: hsl(var(--hero-text-body));
+  }
+
+  .dark-muted {
+    color: hsl(var(--hero-text-muted));
+  }
+
+  .dark-highlight {
+    color: hsl(var(--hero-text-highlight));
+  }
+}
+
+.perfect-shadow {
+  box-shadow: var(--perfect-shadow);
+  --base: hsl(214 80% 27% / 4%);
+  --shade: hsl(from var(--base) calc(h + 8) 25 calc(l - 5));
+  --perfect-shadow: 0 0 0 1px var(--base), 0 1px 1px -0.5px var(--shade),
+    0 3px 3px -1.5px var(--shade), 0 6px 6px -3px var(--shade),
+    0 12px 12px -6px var(--base), 0 24px 24px -12px var(--base);
+}
