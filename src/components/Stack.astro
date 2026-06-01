@@ -1,79 +1,66 @@
 ---
 import Image from "astro/components/Image.astro";
 
-/* 
+/*
     Logos were provided by "svgl" free and open source icons library.
     Link: https://svgl.app/
 */
 const logos = [
-  {src: "/logos/blender.svg", alt: "Blender Logo"},
-  {src: "/logos/unreal.svg", alt: "Unreal Logo"},
-  {src: "/logos/davinci-resolve.svg", alt: "Davinci Resolve Logo"},
-  {src: "/logos/figma.svg", alt: "Figma Logo"},
-  {src: "/logos/adobe.svg", alt: "adobe Logo"},
-  { src: "/logos/astro.svg", alt:   "AstroJS Logo" },
+  { src: "/logos/blender.svg", alt: "Blender Logo" },
+  { src: "/logos/unreal.svg", alt: "Unreal Logo" },
+  { src: "/logos/davinci-resolve.svg", alt: "Davinci Resolve Logo" },
+  { src: "/logos/figma.svg", alt: "Figma Logo" },
+  { src: "/logos/adobe.svg", alt: "Adobe Logo" },
+  { src: "/logos/astro.svg", alt: "AstroJS Logo" },
   { src: "/logos/react.svg", alt: "ReactJS Logo" },
-  // { src: "/logos/next.svg", alt: "NextJS" },
-  // { src: "/logos/vercel.svg", alt: "Vercel Logo" },
   { src: "/logos/tailwindcss.svg", alt: "TailwindCSS Logo" },
-  // { src: "/logos/typescript.svg", alt: "TypeScript Logo" },
-  // { src: "/logos/aws.svg", alt: "AWS Logo" },
-  // { src: "/logos/supabase.svg", alt: "Supabase Logo" },
   { src: "/logos/openai_dark.svg", alt: "OpenAI Logo" },
 ];
 ---
 
-<section
-  class="relative w-full text-center flex flex-col justify-center items-center gap-5 px-4 mt-8 py-20 sm:py-24 pointer-events-none"
-><div class="test rounded-ss-full rounded-se-full bg-background absolute w-full h-full -z-10"></div>
-  <h2
-    class="w-full max-w-xl sm:text-center text-lg sm:text-2xl md:text-4xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-primary via-foreground to-foreground"
-  >
-    Top Technologies I Use For bringing you vision to life
-  </h2>
-  <p
-    class="w-full max-w-xl text-muted-foreground sm:text-center text-normal sm:text-lg md:text-xl font-light tracking-tighter text-balance"
-  >
-    Best tools to deliver the best results.
-  </p>
-  <div
-    class="w-full h-fit max-w-xl flex flex-col justify-center select-none overflow-hidden gradient"
-  >
-    <div class="w-max flex flex-nowrap gap-[4rem] animate-slide-logos">
-      {
-        logos.concat(logos).map((logo) => (
-          <div class="aspect-square flex items-center justify-center size-20">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={32}
-              // height={32}
-              loading="eager"
-              class="object-contain"
-            />
-          </div>
-        ))
-      }
+<section class="dark-section relative w-full overflow-hidden py-16 sm:py-20">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute left-12 top-10 h-48 w-48 rounded-full bg-white/8 blur-3xl"></div>
+    <div class="absolute right-12 bottom-0 h-56 w-56 rounded-full bg-white/6 blur-3xl"></div>
+  </div>
+
+  <div class="relative w-full">
+    <div class="w-full bg-white/[0.07] px-5 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.2)] sm:px-8 sm:py-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
+          Tools and Workflow
+        </p>
+        <h2 class="mt-4 text-2xl font-semibold tracking-tighter text-white sm:text-3xl lg:text-4xl">
+          Top technologies I use to bring your
+          <span class="text-white/75">vision</span>
+          to life.
+        </h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/72 sm:text-base">
+          A focused production stack chosen for
+          <span class="font-medium text-white"> quality</span>,
+          <span class="font-medium text-white"> speed</span>, and
+          <span class="font-medium text-white"> consistent delivery</span>.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+        <div class="flex w-max animate-slide-logos gap-16">
+          {
+            logos.concat(logos).map((logo) => (
+              <div class="flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={38}
+                  height={38}
+                  loading="eager"
+                  class="h-9 w-9 object-contain grayscale brightness-0 invert opacity-65 contrast-75"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .gradient {
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      black 20%,
-      black 80%,
-      transparent
-    );
-    webkitmask: linear-gradient(
-      90deg,
-      transparent,
-      black 20%,
-      black 80%,
-      black transparent
-    );
-  }
-  
-</style>

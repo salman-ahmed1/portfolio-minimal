@@ -1,169 +1,189 @@
 ---
-/*
-  Mockup images are provided by shots.so
-  Link: https://shots.so/
-*/
+const featuredProject = {
+  title: "Beverage Product Visualization & Animation",
+  description:
+    "Realistic, product-focused visuals built to make packaging feel premium and ready for launch campaigns.",
+  embed:
+    "https://www.youtube-nocookie.com/embed/dwy1i7O-N6o?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+  label: "Project / Visualization",
+};
 
-
-import Image from "astro/components/Image.astro";
+const supportingProjects = [
+  {
+    title: "Product Visualization",
+    description:
+      "Detailed product renders and motion designed for sales pages, ads, and presentations that need immediate trust.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/S47IffiTPPg?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Project / Design",
+  },
+  {
+    title: "Environment Rendering",
+    description:
+      "Cinematic real-time environments with polished lighting, depth, and composition for immersive storytelling.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/HksQeYXrymc?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Project / Unreal Engine",
+  },
+  {
+    title: "Additional Product Animation Study",
+    description:
+      "A focused motion piece that reinforces realism, camera control, and presentation polish.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/9-GGL-Mbdc0?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Extended Showcase",
+  },
+  {
+    title: "Packaging and Motion Detail Showcase",
+    description:
+      "A presentation-led sequence highlighting material finish, product form, and premium visual polish.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/3B9vWpwR2Xo?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Product Motion",
+  },
+  {
+    title: "Commercial Visualization Sequence",
+    description:
+      "Cinematic framing and lighting intended to make branded visuals feel more trustworthy and marketable.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/mhRPpzKFioc?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Brand Visuals",
+  },
+  {
+    title: "Short-Form Social Product Clip",
+    description:
+      "A short vertical cut designed for quick attention and social-first product storytelling.",
+    embed:
+      "https://www.youtube-nocookie.com/embed/mERhTHQ8d9Q?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0",
+    label: "Shorts / Social",
+  },
+];
 ---
 
-<section
-  class="relative overflow-hidden bg-foreground w-full text-center flex flex-col justify-center items-center gap-10 px-4 py-24 sm:py-24 select-none"
->
-  <h2
-    class="z-10 w-full max-w-xl sm:text-center text-lg sm:text-2xl md:text-4xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-b from-background via-background to-muted-foreground"
-  >
-    Every project is a new challenge to overcome.
-  </h2>
-  <p
-    class="w-full max-w-xl bg-clip-text text-transparent bg-gradient-to-b from-background via-background to-muted-foreground sm:text-center text-normal sm:text-lg md:text-xl font-light tracking-tighter text-balance"
-  >
-    Understand, Visualize, Optimize, Repeat.  
-  </p>
-  <div class="z-10 max-w-screen-3xl grid grid-cols-1 md:grid-cols-5 lg:grid-rows-7 gap-2">
-    <article
-      class="relative bg-dark-card col-span-1 md:col-span-full md:row-span-2 border border-dark-border rounded-[1rem] flex flex-col xl:flex-row lg:gap-3"
-    >
-      <div class="flex flex-col gap-2 md:max-w-sm items-start p-4 ">
-        <h3
-          class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
-        >
-         Beverage Product visualization & animation
-        </h3>
-        <p
-          class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
-        >
-          Realistic 100% environment friendly & 0% waste simulation animatinos.
-        </p>
+<section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute left-0 top-20 h-80 w-80 rounded-full bg-primary/10 blur-[150px]"></div>
+    <div class="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-[180px]"></div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-7xl">
+    <div class="dark-panel rounded-3xl border px-5 py-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:px-7 sm:py-7 lg:px-8 [background-image:linear-gradient(180deg,rgba(255,255,255,0.03),transparent_20%)]">
+      <div class="border-b border-white/10 pb-6">
+        <div class="max-w-2xl">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.28em]">
+            Selected Works
+          </p>
+          <h2 class="mt-4 text-2xl font-semibold tracking-tighter text-white sm:text-3xl">
+            Every project is a new
+            <span class="dark-highlight">challenge</span>
+            to overcome.
+          </h2>
+          <p class="dark-body mt-3 text-base leading-7">
+            "Understand,
+            <span class="font-semibold text-white">Visualize</span>,
+            Optimize,
+            <span class="dark-highlight font-semibold">Repeat</span>."
+          </p>
+        </div>
       </div>
-      <div class=" aspect-video hover:scale-125 transition-all duration-300 ease-in-out object-fill">
-        <iframe loading="lazy" class="border border-dark-border rounded-2xl h-full w-full"  src="https://www.youtube-nocookie.com/embed/dwy1i7O-N6o?si=QTIvlmu7wyaZApyG&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </article>
-  
-    
-    <article
-      class=" bg-dark-card col-span-1 md:col-span-full md:row-span-2 flex flex-col xl:flex-row-reverse lg:gap-3"
-    >
-      <div class="flex flex-col gap-2 w-full items-start p-4 max-w-sm">
-        <h3
-          class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
-        >
-          Product visualization
-        </h3>
-        <p
-          class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
-        >
-          Modelling, rendering & animations for your product.
-        </p>
-      </div>
-      <div class="aspect-video hover:scale-125 transition-all duration-300 ease-in-out ">
-        <iframe loading="lazy" class="border border-dark-border rounded-2xl h-full w-full" width="560" height="315" src="https://www.youtube-nocookie.com/embed/S47IffiTPPg?si=7XEXdFQJvyiTwkz6&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </article>
-    <article
-      class=" bg-dark-card col-span-1 md:col-span-full md:row-span-2 flex flex-col xl:flex-row lg:gap-3"
-    >
-      <div class="flex flex-col gap-2 w-full items-start p-4 ">
-        <h3
-          class="text-left sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
-        >
-          Enviournment Rendering
-        </h3>
-        <p
-          class="w-full text-muted-foreground text-left text-sm sm:text-normal md:text-lg font-light tracking-tighter text-balance"
-        >
-          Realistic environment rendering and simualtion in unreal engine 5.
-        </p>
-      </div>
-      <div class="aspect-video  hover:scale-125 transition-all duration-300 ease-in-out">
-        <iframe loading="lazy" class="border border-dark-border rounded-2xl h-full w-full"  src="https://www.youtube.com/embed/HksQeYXrymc?si=8z_je_rlRTk_MfdD&amp;rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-       
-      </div>
-    </article>
-    <article
-      class="overflow-hidden bg-dark-card col-span-1 md:col-span-2 md:row-span-3  border-dark-border rounded-2xl"
-    >
-      <div
-        class="w-full h-full flex flex-col gap-5 justify-center items-center"
-      >
-        <h1
-          class="sm:text-xl md:text-2xl font-medium tracking-tighter text-pretty bg-clip-text text-transparent bg-gradient-to-br from-background via-background to-secondary"
-        >
-          Lets work together
-        </h1>
-        <a
-          href="https://www.linkedin.com/in/salman-ahmed-designer/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-fit flex gap-2 justify-center items-center px-4 py-2 sm:text-lg font-medium text-background bg-primary rounded-full"
-        >
-          LinkedIn
-          <svg
-            width="256"
-            height="256"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid"
-            viewBox="0 0 256 256"
-            class="size-5"
-            ><path
-              d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
-              fill="currentColor"></path></svg
+
+      <div class="mt-6 grid gap-5">
+        <article class="overflow-hidden rounded-3xl border border-white/10 bg-black sm:relative">
+          <div class="relative aspect-video overflow-hidden bg-black lg:min-h-[34rem]">
+            <iframe
+              loading="lazy"
+              class="block h-full w-full mx-auto"
+              src={featuredProject.embed}
+              title={featuredProject.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 hidden h-48 bg-gradient-to-t from-black/95 via-black/45 to-transparent sm:block"></div>
+          </div>
+          <div class="border-t border-white/10 bg-black p-4 sm:absolute sm:bottom-6 sm:left-6 sm:right-6 sm:z-10 sm:border-none sm:bg-transparent sm:p-0">
+            <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.22em] ">
+              {featuredProject.label}
+            </p>
+            <h3 class="mt-3 max-w-[18ch] text-2xl font-semibold tracking-tighter text-white sm:text-3xl">
+              {featuredProject.title}
+            </h3>
+            <p class="dark-body mt-3 max-w-md text-sm leading-6 sm:text-base sm:leading-7">
+              {featuredProject.description}
+            </p>
+          </div>
+        </article>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          {
+            supportingProjects.map((project, index) => (
+              <article
+                class:list={[
+                  "min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-black sm:relative",
+                  index > 1 && "hidden-project hidden",
+                ]}
+              >
+                <div class="relative aspect-square min-h-64 overflow-hidden bg-black sm:min-h-80">
+                  <iframe
+                    loading="lazy"
+                    class="block h-full w-full mx-auto"
+                    src={project.embed}
+                    title={project.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                  <div class="pointer-events-none absolute inset-x-0 bottom-0 hidden h-56 bg-gradient-to-t from-black/95 via-black/45 to-transparent sm:block"></div>
+                </div>
+                <div class="border-t border-white/10 bg-black p-4 sm:absolute sm:bottom-4 sm:left-4 sm:right-4 sm:z-10 sm:border-none sm:bg-transparent sm:p-0">
+                  <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.22em]">
+                    {project.label}
+                  </p>
+                  <h3 class="mt-3 text-xl font-semibold tracking-tight text-white">
+                    {project.title}
+                  </h3>
+                  <p class="dark-body mt-2 max-w-sm text-sm leading-6">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="flex justify-center pt-2">
+          <button
+            type="button"
+            class="group inline-flex size-12 w-32 items-center justify-center rounded-full border border-white/12 bg-white/5 text-2xl leading-none text-white transition-colors duration-200 hover:bg-white/10"
+            aria-label="Show more portfolio projects"
+            aria-expanded="false"
+            data-show-more-toggle
           >
-        </a>
+            <span class="transition-transform duration-200 group-aria-expanded:rotate-180" aria-hidden="true">
+              &#8595;
+            </span>
+          </button>
+        </div>
       </div>
-    </article>
-      <article
-      class="-z-10 overflow-hidden group bg-dark-card col-span-1 md:col-span-1 md:row-span-1 border border-dark-border rounded-2xl p-4 flex flex-col flex-1 gap-2 justify-center items-center" 
-    >
-      <div
-        class="w-fit rounded-full bg-background px-4 py-2 flex justify-center items-center rotate-12 group-hover:rotate-0 border transition-all duration-300 ease-in-out"
-      >
-        <span
-          class="text-normal sm:text-lg md:text-xl font-light tracking-tighter"
-        >
-          3D Animation
-        </span>
-      </div>
-      <div
-        class="w-fit rounded-full bg-background px-4 py-2 flex justify-center items-center -rotate-6 group-hover:rotate-0 border transition-all duration-300 ease-in-out"
-      >
-        <span
-          class="text-normal sm:text-lg md:text-xl font-light tracking-tighter"
-        >
-         Design
-        </span>
-      </div>
-      <div
-        class="w-fit rounded-full bg-background px-4 py-2 flex justify-center items-center border"
-      >
-        <span
-          class="text-normal sm:text-lg md:text-xl font-light tracking-tighter"
-        >
-           Web Development
-        </span>
-      </div>
-      <div
-        class="w-fit rounded-full bg-background px-4 py-2 flex justify-center items-center border rotate-12 group-hover:rotate-0 transition-all duration-300 ease-in-out"
-      >
-        <span
-          class="text-normal sm:text-lg md:text-xl font-light tracking-tighter"
-        >
-         VFX
-        </span>
-      </div>
-    </article>
+    </div>
   </div>
-  <div
-    class="bg-white opacity-10 absolute size-80 top-[-160px] border blur-[150px] rounded-full"
-  >
-  </div>
-  
 </section>
 
-<style>
-  .group:hover .animate-vertical-slide {
-    animation-play-state: paused;
+<script is:inline>
+  const toggle = document.querySelector("[data-show-more-toggle]");
+  const hiddenProjects = document.querySelectorAll(".hidden-project");
+
+  if (toggle && hiddenProjects.length) {
+    toggle.addEventListener("click", () => {
+      const opening = hiddenProjects[0].classList.contains("hidden");
+      hiddenProjects.forEach((project) => {
+        project.classList.toggle("hidden", !opening);
+      });
+      toggle.setAttribute("aria-expanded", String(opening));
+      toggle.setAttribute(
+        "aria-label",
+        opening ? "Show fewer portfolio projects" : "Show more portfolio projects"
+      );
+    });
   }
-</style>
+</script>

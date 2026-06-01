@@ -38,7 +38,7 @@ const testimonials = [
       <span class="dark-kicker text-xs font-semibold uppercase tracking-[0.38em]">
         Client Stories
       </span>
-      <h2 class="mt-5 max-w-[13ch] text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl">
+      <h2 class="mt-5 max-w-[13ch] text-balance text-4xl font-semibold leading-tight tracking-tighter text-white sm:text-5xl">
         Trusted by clients who needed
         <span class="dark-highlight">better visuals</span>
         fast.
@@ -71,7 +71,7 @@ const testimonials = [
       <div class="testimonial-track flex gap-6">
         {
           testimonials.concat(testimonials).map((testimonial) => (
-            <article class="testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-[1.75rem] border shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm">
+            <article class="testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm">
               <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
                 <div>
                   <p class="text-base font-semibold text-white">{testimonial.name}</p>
@@ -79,7 +79,7 @@ const testimonials = [
                     {testimonial.title}
                   </p>
                 </div>
-                <span class="dark-panel-soft rounded-full border px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.22em] backdrop-blur-md">
+                <span class="dark-panel-soft rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] backdrop-blur-md">
                   {testimonial.tag}
                 </span>
               </div>

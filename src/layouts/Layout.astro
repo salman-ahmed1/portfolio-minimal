@@ -9,7 +9,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const GA_ID = "G-LLTE84V97Q";
 ---
 
 <!doctype html>
@@ -17,18 +16,15 @@ const GA_ID = "G-LLTE84V97Q";
 <head>
   
 
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLTE84V97Q"></script>
 
-<script is:inline define:vars={{ GA_ID }}>
-  // @ts-nocheck
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
-
-  function gtag(...args) {
-    window.dataLayer.push(args);
+  function gtag() {
+    dataLayer.push(arguments);
   }
-
   gtag('js', new Date());
-  gtag('config', GA_ID);
+  gtag('config', 'G-LLTE84V97Q');
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

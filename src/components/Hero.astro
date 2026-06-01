@@ -1,13 +1,13 @@
 ---
 const heroVideo =
-  "https://www.youtube-nocookie.com/embed/videoseries?controls=0&list=PLVCSgmpWFEbu-mL9JXRDLRHwhhYfhwOAK&rel=0&mute=1&autoplay=1&loop=1&playlist=PLVCSgmpWFEbu-mL9JXRDLRHwhhYfhwOAK";
+  "https://www.youtube-nocookie.com/embed/videoseries?controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&mute=1&autoplay=1&loop=1&list=PLVCSgmpWFEbu-mL9JXRDLRHwhhYfhwOAK&playlist=PLVCSgmpWFEbu-mL9JXRDLRHwhhYfhwOAK";
 ---
 
 <section
   id="hero"
   class="relative isolate w-full overflow-hidden px-4 pb-20 pt-0 sm:px-6 sm:pb-24 sm:pt-0 lg:px-8 lg:pb-28"
 >
-  <div class="pointer-events-none absolute inset-0 -z-20 overflow-hidden rounded-b-[2rem]">
+  <div class="pointer-events-none absolute inset-0 -z-20 overflow-hidden rounded-b-4xl">
     <div class="hero-video absolute inset-0 ">
       <iframe
         class="hero-video__frame"
@@ -24,7 +24,7 @@ const heroVideo =
   <div class="pointer-events-none absolute left-0 top-1/2 -z-10 size-72 -translate-y-1/2 rounded-full bg-primary/12 blur-[140px]"></div>
   <div class="pointer-events-none absolute bottom-10 right-0 -z-10 size-80 rounded-full bg-secondary/12 blur-[160px]"></div>
 
-  <div class="mx-auto flex min-h-[100dvh] w-full max-w-5xl items-center justify-center pt-24 sm:pt-28 lg:pt-32">
+  <div class="mx-auto flex min-h-dvh w-full max-w-5xl items-center justify-center pt-24 sm:pt-28 lg:pt-32">
     <div class="flex max-w-3xl flex-col items-center text-center text-white">
       <span
         class="hero-copy dark-kicker opacity-0 text-xs font-semibold uppercase tracking-[0.42em]"
@@ -32,7 +32,7 @@ const heroVideo =
         Visionary 3D Artist
       </span>
       <h1
-        class="hero-copy hero-copy-delay-1 mt-6 max-w-[13ch] text-balance text-[2.7rem] font-semibold leading-[1.04] tracking-[-0.045em] text-white opacity-0 sm:text-[3.7rem] md:text-[4.6rem] lg:text-[5rem]"
+        class="hero-copy hero-copy-delay-1 mt-6 max-w-[13ch] text-balance text-5xl font-semibold leading-tight tracking-tight text-white opacity-0 sm:text-6xl md:text-7xl lg:text-8xl"
       >
         Helping You Visualize Your
         <span class="bg-gradient-to-r from-[#9f8bff] via-[#bbaeff] to-[#8db0ff] bg-clip-text text-transparent">
@@ -46,8 +46,10 @@ const heroVideo =
       <p
         class="hero-copy hero-copy-delay-2 dark-body mt-8 max-w-xl text-balance text-base leading-7 opacity-0 sm:text-lg sm:leading-8"
       >
-        High-impact 3D visuals and digital solutions without unnecessary overhead.
-        Elevate your brand with cinematic product storytelling.
+        <span class="font-semibold text-white">High-impact 3D visuals</span>
+        and digital solutions without unnecessary overhead.
+        Elevate your brand with
+        <span class="dark-highlight font-semibold">cinematic product storytelling</span>.
       </p>
 
       <div
