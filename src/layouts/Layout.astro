@@ -62,5 +62,54 @@ const { title } = Astro.props;
     <slot />
     <SpeedInsights />
     <Analytics />
+    <script is:inline>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealSelector = "[data-reveal]";
+
+        const markVisible = (element) => {
+          if (!(element instanceof HTMLElement)) return;
+          element.classList.add("is-visible");
+        };
+
+        const markHidden = (element) => {
+          if (!(element instanceof HTMLElement)) return;
+          element.classList.remove("is-visible");
+        };
+
+        const revealScope = (scope) => {
+          if (!(scope instanceof Element)) return;
+          scope.querySelectorAll(revealSelector).forEach(markVisible);
+        };
+
+        window.__siteReveal = { markVisible, markHidden, revealScope };
+
+        if (reduceMotion) {
+          document.querySelectorAll(revealSelector).forEach(markVisible);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!(entry.target instanceof HTMLElement)) return;
+
+              if (entry.isIntersecting) {
+                markVisible(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -5% 0px",
+          }
+        );
+
+        document.querySelectorAll(revealSelector).forEach((element) => {
+          observer.observe(element);
+        });
+      })();
+    </script>
   </body>
 </html>

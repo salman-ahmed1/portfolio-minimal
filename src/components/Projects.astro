@@ -69,7 +69,7 @@ const supportingProjects = [
   <div class="relative mx-auto w-full max-w-7xl">
     <div class="dark-panel rounded-3xl border px-5 py-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:px-7 sm:py-7 lg:px-8 [background-image:linear-gradient(180deg,rgba(255,255,255,0.03),transparent_20%)]">
       <div class="border-b border-white/10 pb-6">
-        <div class="max-w-2xl">
+        <div class="max-w-2xl" data-reveal="soft">
           <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.28em]">
             Selected Works
           </p>
@@ -81,14 +81,17 @@ const supportingProjects = [
           <p class="dark-body mt-3 text-base leading-7">
             "Understand,
             <span class="font-semibold text-white">Visualize</span>,
-            Optimize,
+            <span class="dark-highlight font-semibold">Optimize</span>,
             <span class="dark-highlight font-semibold">Repeat</span>."
           </p>
         </div>
       </div>
 
       <div class="mt-6 grid gap-5">
-        <article class="overflow-hidden rounded-3xl border border-white/10 bg-black sm:relative">
+        <article
+          class="overflow-hidden rounded-3xl border border-white/10 bg-black sm:relative"
+          data-reveal="scale"
+        >
           <div class="relative aspect-video overflow-hidden bg-black lg:min-h-[34rem]">
             <iframe
               loading="lazy"
@@ -109,7 +112,9 @@ const supportingProjects = [
               {featuredProject.title}
             </h3>
             <p class="dark-body mt-3 max-w-md text-sm leading-6 sm:text-base sm:leading-7">
-              {featuredProject.description}
+              <span class="font-semibold text-white">Realistic, product-focused visuals</span>
+              {" "}
+              built to make packaging feel premium and ready for launch campaigns.
             </p>
           </div>
         </article>
@@ -122,6 +127,8 @@ const supportingProjects = [
                   "min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-black sm:relative",
                   index > 1 && "hidden-project hidden",
                 ]}
+                data-reveal="scale"
+                style={`--reveal-delay:${index * 120}ms;`}
               >
                 <div class="relative aspect-square min-h-64 overflow-hidden bg-black sm:min-h-80">
                   <iframe
@@ -158,6 +165,8 @@ const supportingProjects = [
             aria-label="Show more portfolio projects"
             aria-expanded="false"
             data-show-more-toggle
+            data-reveal="soft"
+            style="--reveal-delay:220ms;"
           >
             <span class="transition-transform duration-200 group-aria-expanded:rotate-180" aria-hidden="true">
               &#8595;
@@ -176,8 +185,25 @@ const supportingProjects = [
   if (toggle && hiddenProjects.length) {
     toggle.addEventListener("click", () => {
       const opening = hiddenProjects[0].classList.contains("hidden");
-      hiddenProjects.forEach((project) => {
-        project.classList.toggle("hidden", !opening);
+      const revealApi = window.__siteReveal;
+
+      hiddenProjects.forEach((project, index) => {
+        if (!(project instanceof HTMLElement)) return;
+
+        if (opening) {
+          project.classList.add("opacity-0");
+          project.classList.remove("hidden", "is-visible");
+          project.style.setProperty("--reveal-delay", `${index * 120}ms`);
+
+          requestAnimationFrame(() => {
+            revealApi?.markVisible?.(project);
+            project.classList.remove("opacity-0");
+          });
+          return;
+        }
+
+        revealApi?.markHidden?.(project);
+        project.classList.add("hidden");
       });
       toggle.setAttribute("aria-expanded", String(opening));
       toggle.setAttribute(

@@ -25,6 +25,31 @@ const testimonials = [
     tag: "Product Visuals",
   },
 ];
+
+const proofPoints = [
+  {
+    target: 100,
+    suffix: "%",
+    label: "Satisfaction Rate",
+  },
+  {
+    target: 5,
+    suffix: "+",
+    label: "Projects Completed",
+  },
+  {
+    target: 4.5,
+    decimals: 1,
+    suffix: "/5",
+    label: "Client Rating",
+    stars: true,
+  },
+  {
+    target: 115,
+    suffix: "+ hrs",
+    label: "Rated Hours",
+  },
+];
 ---
 
 <section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
@@ -34,7 +59,7 @@ const testimonials = [
   </div>
 
   <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-12">
-    <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+    <div class="mx-auto flex max-w-3xl flex-col items-center text-center" data-reveal="soft">
       <span class="dark-kicker text-xs font-semibold uppercase tracking-[0.38em]">
         Client Stories
       </span>
@@ -50,67 +75,112 @@ const testimonials = [
         <span class="dark-highlight font-semibold">clearer proof of trust</span>
         for faster scanning.
       </p>
-      <div class="mt-8 flex flex-col items-center gap-3 text-center sm:flex-row">
-        <a
-          href="https://www.upwork.com/freelancers/salmanahmed381"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/6 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10"
-        >
-          View Upwork Reviews
-        </a>
-        <span class="dark-body text-sm font-medium">
-          <span class="font-semibold text-white">5-star ratings</span>
-          and
-          <span class="dark-highlight font-semibold">100% client satisfaction</span>
-        </span>
-      </div>
     </div>
 
-    <div class="relative overflow-hidden">
-      <div class="testimonial-track flex gap-6">
-        {
-          testimonials.concat(testimonials).map((testimonial) => (
-            <article class="testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm">
-              <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-                <div>
-                  <p class="text-base font-semibold text-white">{testimonial.name}</p>
-                  <p class="dark-muted mt-1 text-xs uppercase tracking-[0.18em]">
-                    {testimonial.title}
-                  </p>
+  </div>
+
+  <div
+    class="relative mt-12 -mx-4 border-y border-white/10 bg-white/[0.05] backdrop-blur-xl sm:-mx-6 lg:-mx-8"
+    data-reveal="soft"
+    data-count-group
+  >
+    <div class="mx-auto grid w-full max-w-7xl gap-0 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+      {
+        proofPoints.map((point) => (
+          <article class="flex flex-col items-center justify-center px-6 py-8 text-center sm:py-10 lg:min-h-56 lg:border-r lg:border-white/10 last:lg:border-r-0">
+            {point.stars && (
+              <div class="mb-4 flex flex-col items-center">
+                <div class="top-rated-badge mb-4 inline-flex items-center gap-2 rounded-full border border-[#f6c56b]/30 bg-[#f6c56b]/10 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#f6c56b]">
+                  <span class="top-rated-badge__icon inline-flex h-5 w-5 items-center justify-center rounded-full border border-[#f6c56b]/45 bg-[#f6c56b]/12">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path
+                        class="top-rated-badge__tick"
+                        d="M3.5 8.2 6.6 11.2 12.5 5.1"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        pathLength="1"
+                      />
+                    </svg>
+                  </span>
+                  Top Rated
                 </div>
-                <span class="dark-panel-soft rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] backdrop-blur-md">
-                  {testimonial.tag}
-                </span>
-              </div>
-
-              <div class="dark-panel-soft p-4">
-                <img
-                  src={testimonial.src}
-                  alt={testimonial.alt}
-                  class="h-auto w-full rounded-2xl border border-white/8 object-contain"
-                />
-              </div>
-
-              <div class="flex flex-col gap-4 px-5 pb-5 pt-2">
-                <div class="flex gap-1 text-[#f6c56b]">
+                <div class="flex items-center gap-1 text-[#f6c56b]" aria-label="5 star rating">
                   {[...Array(5)].map(() => (
-                    <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg class="h-5 w-5 fill-current sm:h-6 sm:w-6" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292Z" />
                     </svg>
                   ))}
                 </div>
-                <p class="dark-body text-base leading-7">
-                  "{testimonial.text}"
+              </div>
+            )}
+            <p class="text-5xl font-semibold tracking-tighter text-white sm:text-6xl">
+              <span
+                data-count-up
+                data-target={String(point.target)}
+                data-decimals={String(point.decimals ?? 0)}
+                data-suffix={point.suffix ?? ""}
+              >
+                0
+              </span>
+            </p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              {point.label}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="relative mx-auto mt-12 w-full max-w-7xl overflow-hidden">
+    <div class="testimonial-track flex gap-6">
+      {
+        testimonials.concat(testimonials).map((testimonial, index) => (
+          <article
+            class="testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm"
+            data-reveal="horizontal"
+            style={`--reveal-delay:${Math.min(index, 2) * 120}ms;`}
+          >
+            <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
+              <div>
+                <p class="text-base font-semibold text-white">{testimonial.name}</p>
+                <p class="dark-muted mt-1 text-xs uppercase tracking-[0.18em]">
+                  {testimonial.title}
                 </p>
               </div>
-            </article>
-          ))
-        }
-      </div>
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050507] to-transparent"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050507] to-transparent"></div>
+              <span class="dark-panel-soft rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] backdrop-blur-md">
+                {testimonial.tag}
+              </span>
+            </div>
+
+            <div class="dark-panel-soft p-4">
+              <img
+                src={testimonial.src}
+                alt={testimonial.alt}
+                class="h-auto w-full rounded-2xl border border-white/8 object-contain"
+              />
+            </div>
+
+            <div class="flex flex-col gap-4 px-5 pb-5 pt-2">
+              <div class="flex gap-1 text-[#f6c56b]">
+                {[...Array(5)].map(() => (
+                  <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292Z" />
+                  </svg>
+                ))}
+              </div>
+              <p class="dark-body text-base leading-7">
+                "{testimonial.text}"
+              </p>
+            </div>
+          </article>
+        ))
+      }
     </div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050507] to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050507] to-transparent"></div>
   </div>
 </section>
 
@@ -134,6 +204,54 @@ const testimonials = [
     animation-play-state: paused;
   }
 
+  .is-visible .top-rated-badge {
+    animation: topRatedBadgeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .is-visible .top-rated-badge__icon {
+    animation: topRatedBadgeSpin 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  .is-visible .top-rated-badge__tick {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: topRatedTickIn 0.65s ease forwards 0.45s;
+  }
+
+  @keyframes topRatedBadgeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.94);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes topRatedBadgeSpin {
+    from {
+      transform: rotate(-160deg) scale(0.75);
+    }
+
+    to {
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes topRatedTickIn {
+    from {
+      stroke-dashoffset: 1;
+      opacity: 0.35;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
   @media (max-width: 767px) {
     .testimonial-track {
       animation-duration: 42s;
@@ -143,4 +261,71 @@ const testimonials = [
       width: min(90vw, 22rem);
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .is-visible .top-rated-badge,
+    .is-visible .top-rated-badge__icon,
+    .is-visible .top-rated-badge__tick {
+      animation: none;
+    }
+
+    .top-rated-badge__tick {
+      stroke-dasharray: none;
+      stroke-dashoffset: 0;
+    }
+  }
 </style>
+
+<script is:inline>
+  const countGroup = document.querySelector("[data-count-group]");
+  const counters = document.querySelectorAll("[data-count-up]");
+
+  if (countGroup && counters.length) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const setFinalValue = (counter) => {
+      const target = Number(counter.dataset.target || "0");
+      const decimals = Number(counter.dataset.decimals || "0");
+      const suffix = counter.dataset.suffix || "";
+      counter.textContent = `${target.toFixed(decimals)}${suffix}`;
+    };
+
+    const animateCounter = (counter) => {
+      const target = Number(counter.dataset.target || "0");
+      const decimals = Number(counter.dataset.decimals || "0");
+      const suffix = counter.dataset.suffix || "";
+      const duration = 1400;
+      const start = performance.now();
+
+      const frame = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = target * eased;
+        counter.textContent = `${value.toFixed(decimals)}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        }
+      };
+
+      requestAnimationFrame(frame);
+    };
+
+    if (reduceMotion) {
+      counters.forEach(setFinalValue);
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            counters.forEach(animateCounter);
+            observer.disconnect();
+          });
+        },
+        { threshold: 0.35 }
+      );
+
+      observer.observe(countGroup);
+    }
+  }
+</script>
