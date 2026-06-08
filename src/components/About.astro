@@ -1,3 +1,13 @@
+---
+const subjectOptions = [
+  "3D Product Visualization",
+  "Product Animation",
+  "Environment Visuals",
+  "Website / Frontend Work",
+  "Brand Presentation Assets",
+];
+---
+
 <section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute left-0 top-20 h-72 w-72 rounded-full bg-primary/10 blur-[140px]"></div>
@@ -68,24 +78,194 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-4 sm:flex-row" data-reveal="soft" style="--reveal-delay:260ms;">
-        <a
-          href="https://www.linkedin.com/in/salman-ahmed-designer/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex min-h-14 items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(99,102,241,0.35)] transition-transform duration-200 hover:-translate-y-0.5"
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="dark-panel rounded-3xl border p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-8"
+        data-reveal="scale"
+        data-contact-form
+        style="--reveal-delay:260ms;"
+      >
+        <input type="hidden" name="access_key" value="d0bc22a4-f2ad-40fc-8a2c-e4881884cfc6" />
+
+        <div class="mb-6">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.22em]">
+            Project Inquiry
+          </p>
+          <h3 class="mt-3 text-2xl font-semibold tracking-tight text-white">
+            Send the project details.
+          </h3>
+          <p class="dark-body mt-3 text-sm leading-6">
+            Share what you need, the visual direction, and any deadline. I will reply with the next practical step.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="flex flex-col gap-2 text-sm font-semibold text-white">
+            Name
+            <input
+              type="text"
+              name="name"
+              required
+              autocomplete="name"
+              class="min-h-12 rounded-2xl border border-white/10 bg-black/30 px-4 text-base font-medium text-white outline-none transition-colors placeholder:text-white/35 focus:border-white/30 focus:bg-black/40"
+              placeholder="Your name"
+            />
+          </label>
+
+          <label class="flex flex-col gap-2 text-sm font-semibold text-white">
+            Email
+            <input
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="min-h-12 rounded-2xl border border-white/10 bg-black/30 px-4 text-base font-medium text-white outline-none transition-colors placeholder:text-white/35 focus:border-white/30 focus:bg-black/40"
+              placeholder="you@example.com"
+            />
+          </label>
+        </div>
+
+        <label class="mt-4 flex flex-col gap-2 text-sm font-semibold text-white">
+          Subject
+          <select
+            name="subject"
+            required
+            data-subject-select
+            class="min-h-12 rounded-2xl border border-white/10 bg-black/30 px-4 text-base font-medium text-white outline-none transition-colors focus:border-white/30 focus:bg-black/40"
+          >
+            <option value="" disabled selected>Select a project type</option>
+            {
+              subjectOptions.map((subject) => (
+                <option value={subject}>{subject}</option>
+              ))
+            }
+            <option value="custom">Custom subject</option>
+          </select>
+        </label>
+
+        <label class="mt-4 hidden flex-col gap-2 text-sm font-semibold text-white" data-custom-subject-wrap>
+          Custom Subject
+          <input
+            type="text"
+            data-custom-subject
+            disabled
+            class="min-h-12 rounded-2xl border border-white/10 bg-black/30 px-4 text-base font-medium text-white outline-none transition-colors placeholder:text-white/35 focus:border-white/30 focus:bg-black/40"
+            placeholder="Write your subject"
+          />
+        </label>
+
+        <label class="mt-4 flex flex-col gap-2 text-sm font-semibold text-white">
+          Message
+          <textarea
+            name="message"
+            required
+            rows="5"
+            class="min-h-36 resize-y rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-base font-medium leading-7 text-white outline-none transition-colors placeholder:text-white/35 focus:border-white/30 focus:bg-black/40"
+            placeholder="Tell me about the product, animation, website, timeline, or assets you need."
+          ></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(99,102,241,0.35)] transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
+          data-contact-submit
         >
-          Start a Conversation
-        </a>
-        <a
-          href="https://www.youtube.com/@salmanahmed3d"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/12 bg-white/6 px-7 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-white/10"
-        >
-          Watch the Showreel
-        </a>
-      </div>
+          Submit Project Inquiry
+        </button>
+        <p
+          class="dark-body mt-4 hidden rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm leading-6"
+          role="status"
+          aria-live="polite"
+          data-contact-status
+        ></p>
+      </form>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  const subjectSelect = document.querySelector("[data-subject-select]");
+  const customSubjectWrap = document.querySelector("[data-custom-subject-wrap]");
+  const customSubject = document.querySelector("[data-custom-subject]");
+  const contactForm = document.querySelector("[data-contact-form]");
+  const contactSubmit = document.querySelector("[data-contact-submit]");
+  const contactStatus = document.querySelector("[data-contact-status]");
+
+  if (subjectSelect instanceof HTMLSelectElement && customSubjectWrap && customSubject instanceof HTMLInputElement) {
+    subjectSelect.addEventListener("change", () => {
+      const isCustom = subjectSelect.value === "custom";
+      customSubjectWrap.classList.toggle("hidden", !isCustom);
+      customSubjectWrap.classList.toggle("flex", isCustom);
+      customSubject.disabled = !isCustom;
+      customSubject.required = isCustom;
+
+      if (isCustom) {
+        subjectSelect.removeAttribute("name");
+        customSubject.setAttribute("name", "subject");
+        customSubject.focus();
+        return;
+      }
+
+      subjectSelect.setAttribute("name", "subject");
+      customSubject.removeAttribute("name");
+      customSubject.value = "";
+    });
+  }
+
+  if (
+    contactForm instanceof HTMLFormElement &&
+    contactSubmit instanceof HTMLButtonElement &&
+    contactStatus instanceof HTMLElement
+  ) {
+    const showStatus = (message, isError = false) => {
+      contactStatus.textContent = message;
+      contactStatus.classList.remove("hidden", "border-red-400/30", "border-emerald-400/30", "text-red-100", "text-emerald-100");
+      contactStatus.classList.add(isError ? "border-red-400/30" : "border-emerald-400/30");
+      contactStatus.classList.add(isError ? "text-red-100" : "text-emerald-100");
+    };
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) return;
+
+      const defaultButtonText = contactSubmit.textContent || "Submit Project Inquiry";
+      contactSubmit.disabled = true;
+      contactSubmit.textContent = "Sending...";
+      showStatus("Sending your inquiry...");
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Submission failed.");
+        }
+
+        contactForm.reset();
+        subjectSelect?.setAttribute("name", "subject");
+        customSubject?.removeAttribute("name");
+        if (customSubject instanceof HTMLInputElement) {
+          customSubject.disabled = true;
+          customSubject.required = false;
+        }
+        customSubjectWrap?.classList.add("hidden");
+        customSubjectWrap?.classList.remove("flex");
+        showStatus("Message sent. I will review the project details and reply soon.");
+      } catch (error) {
+        showStatus("The form could not be sent right now. Please try again in a moment.", true);
+      } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.textContent = defaultButtonText;
+      }
+    });
+  }
+</script>
