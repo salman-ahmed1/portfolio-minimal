@@ -16,7 +16,7 @@ const subjectOptions = [
 
   <div class="relative mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
     <div
-      class="dark-panel rounded-3xl border p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:p-8"
+      class="site-panel-shadow dark-panel rounded-3xl border p-6 backdrop-blur-sm sm:p-8"
       data-reveal="scale"
     >
       <div class="dark-panel-soft rounded-3xl border p-6 sm:p-8">
@@ -39,7 +39,7 @@ const subjectOptions = [
 
     <div class="flex flex-col gap-6">
       <div
-        class="dark-panel rounded-3xl border p-7 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-8"
+        class="site-panel-shadow-soft dark-panel rounded-3xl border p-7 backdrop-blur-sm sm:p-8"
         data-reveal="scale"
         style="--reveal-delay:140ms;"
       >
@@ -81,7 +81,7 @@ const subjectOptions = [
       <form
         action="https://api.web3forms.com/submit"
         method="POST"
-        class="dark-panel rounded-3xl border p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-8"
+        class="site-panel-shadow-soft dark-panel rounded-3xl border p-6 backdrop-blur-sm sm:p-8"
         data-reveal="scale"
         data-contact-form
         style="--reveal-delay:260ms;"
@@ -128,20 +128,25 @@ const subjectOptions = [
 
         <label class="mt-4 flex flex-col gap-2 text-sm font-semibold text-white">
           Subject
-          <select
-            name="subject"
-            required
-            data-subject-select
-            class="min-h-12 rounded-2xl border border-white/10 bg-black/30 px-4 text-base font-medium text-white outline-none transition-colors focus:border-white/30 focus:bg-black/40"
-          >
-            <option value="" disabled selected>Select a project type</option>
-            {
-              subjectOptions.map((subject) => (
-                <option value={subject}>{subject}</option>
-              ))
-            }
-            <option value="custom">Custom subject</option>
-          </select>
+          <span class="relative">
+            <select
+              name="subject"
+              required
+              data-subject-select
+              class="min-h-12 w-full appearance-none rounded-2xl border border-white/10 bg-black/40 px-4 pr-11 text-base font-medium text-white outline-none transition-colors [color-scheme:dark] focus:border-white/30 focus:bg-black/50"
+            >
+              <option class="bg-dark-surface text-white" value="" disabled selected>Select a project type</option>
+              {
+                subjectOptions.map((subject) => (
+                  <option class="bg-dark-surface text-white" value={subject}>{subject}</option>
+                ))
+              }
+              <option class="bg-dark-surface text-white" value="custom">Custom subject</option>
+            </select>
+            <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm text-white/50" aria-hidden="true">
+              &#8595;
+            </span>
+          </span>
         </label>
 
         <label class="mt-4 hidden flex-col gap-2 text-sm font-semibold text-white" data-custom-subject-wrap>
@@ -168,7 +173,7 @@ const subjectOptions = [
 
         <button
           type="submit"
-          class="mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(99,102,241,0.35)] transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
+          class="site-cta-shadow mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-base font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
           data-contact-submit
         >
           Submit Project Inquiry
@@ -259,7 +264,7 @@ const subjectOptions = [
         }
         customSubjectWrap?.classList.add("hidden");
         customSubjectWrap?.classList.remove("flex");
-        showStatus("Message sent. I will review the project details and reply soon.");
+        showStatus("Message sent. I will review the project details and reply to you soon.");
       } catch (error) {
         showStatus("The form could not be sent right now. Please try again in a moment.", true);
       } finally {

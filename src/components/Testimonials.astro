@@ -33,7 +33,7 @@ const proofPoints = [
     label: "Satisfaction Rate",
   },
   {
-    target: 5,
+    target: 7,
     suffix: "+",
     label: "Projects Completed",
   },
@@ -68,13 +68,6 @@ const proofPoints = [
         <span class="dark-highlight">better visuals</span>
         fast.
       </h2>
-      <!-- <p class="dark-body mt-5 max-w-2xl text-balance text-base leading-7 sm:text-lg">
-        Full
-        <span class="font-semibold text-white">review screenshots</span>,
-        cleaner presentation,
-        <span class="dark-highlight font-semibold"> proof of trust</span>
-         faster.
-      </p> -->
     </div>
 
   </div>
@@ -125,6 +118,7 @@ const proofPoints = [
                 0
               </span>
             </p>
+            
             <p class="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
               {point.label}
             </p>
@@ -139,7 +133,7 @@ const proofPoints = [
       {
         testimonials.concat(testimonials).map((testimonial, index) => (
           <article
-            class="testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm"
+            class="site-panel-shadow testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border backdrop-blur-sm"
             data-reveal="horizontal"
             style={`--reveal-delay:${Math.min(index, 2) * 120}ms;`}
           >
@@ -179,8 +173,8 @@ const proofPoints = [
         ))
       }
     </div>
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050507] to-transparent"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050507] to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-dark-surface to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-dark-surface to-transparent"></div>
   </div>
 </section>
 

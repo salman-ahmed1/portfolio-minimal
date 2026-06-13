@@ -18,7 +18,7 @@ const heroVideo =
       ></iframe>
     </div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(130,110,255,0.16),transparent_66%),linear-gradient(180deg,rgba(6,6,10,0.2),rgba(6,6,10,0.88)_98%,rgba(6,6,10,0.96)_100%)]"></div>
-    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050507]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-dark-surface"></div>
   </div>
 
   <div class="pointer-events-none absolute left-0 top-1/2 -z-10 size-72 -translate-y-1/2 rounded-full bg-primary/12 blur-[140px]"></div>
@@ -35,21 +35,19 @@ const heroVideo =
         class="hero-copy hero-copy-delay-1 mt-6 max-w-[13ch] text-balance text-5xl font-semibold leading-tight tracking-tight text-white opacity-0 sm:text-6xl md:text-7xl lg:text-8xl"
       >
         Premium Visuals
-        <!-- <span class="bg-gradient-to-r from-[#9f8bff] via-[#bbaeff] to-[#8db0ff] bg-clip-text text-transparent">
-          motion,
-        </span> -->
         for brands to
         <span class="bg-gradient-to-r from-[#a392ff] via-[#c6bfff] to-[#98a9ff] bg-clip-text text-transparent">
           stand out.
         </span>
       </h1>
       <p
-        class="hero-copy hero-copy-delay-2 dark-body mt-8 max-w-xl text-balance font-light text-base leading-7 opacity-0 sm:text-lg sm:leading-8"
+        class="hero-copy hero-copy-delay-2 dark-body mt-8 flex w-full max-w-xl items-center justify-center gap-x-1 text-center font-light text-base leading-7 opacity-0 sm:text-lg sm:leading-8"
+        aria-label="Ideas into visuals, websites, and digital assets"
       >
-        
-        <span class="font-light text-white">Ideas into visuals, websites, and digital assets. </span>
-       
-         <!-- <span class="dark-highlight font-light"></span> -->
+        <span class="shrink-0 font-light text-white" aria-hidden="true">Ideas into</span>
+        <span class="dark-highlight inline-flex shrink-0 justify-start text-left font-normal" aria-hidden="true">
+          <span data-hero-typewriter>visuals</span><span class="hero-type-cursor"></span>
+        </span>
       </p>
 
       <div
@@ -59,7 +57,7 @@ const heroVideo =
           href="https://www.linkedin.com/in/salman-ahmed-designer/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex min-w-52 items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(99,102,241,0.35)] transition-transform duration-200 hover:-translate-y-0.5"
+          class="site-cta-shadow inline-flex min-w-52 items-center justify-center rounded-2xl bg-gradient-to-r from-primary to-[#4d7cff] px-7 py-4 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5"
         >
           Get a Free Project Estimate
         </a>
@@ -73,7 +71,7 @@ const heroVideo =
         </a>
       </div>
       <p class="hero-copy hero-copy-delay-3 dark-muted mt-5 text-sm opacity-0">
-        Clear communication · Fast iteration · Business-ready delivery
+        Clear communication &middot; Fast iteration &middot; Business-ready delivery
       </p>
     </div>
   </div>
@@ -108,6 +106,25 @@ const heroVideo =
     animation-delay: 0.36s;
   }
 
+  .hero-type-cursor {
+    margin-left: 0.12em;
+    width: 1px;
+    background: currentColor;
+    animation: heroCursorBlink 0.9s steps(2, jump-none) infinite;
+  }
+
+  @keyframes heroCursorBlink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+
+    46%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   .hero-video__frame {
     position: absolute;
     top: 50%;
@@ -125,4 +142,45 @@ const heroVideo =
       height: 56.25vw;
     }
   }
+
 </style>
+
+<script>
+  const typewriter = document.querySelector("[data-hero-typewriter]");
+  const words = ["visuals", "websites", "digital assets"];
+
+  if (typewriter) {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      typewriter.textContent = words[0];
+    } else {
+      let wordIndex = 0;
+      let letterIndex = words[0].length;
+      let isDeleting = true;
+
+      const typeNext = () => {
+        const currentWord = words[wordIndex];
+        typewriter.textContent = currentWord.slice(0, letterIndex);
+
+        if (!isDeleting && letterIndex === currentWord.length) {
+          isDeleting = true;
+          window.setTimeout(typeNext, 1200);
+          return;
+        }
+
+        if (isDeleting && letterIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          window.setTimeout(typeNext, 180);
+          return;
+        }
+
+        letterIndex += isDeleting ? -1 : 1;
+        window.setTimeout(typeNext, isDeleting ? 42 : 72);
+      };
+
+      window.setTimeout(typeNext, 900);
+    }
+  }
+</script>

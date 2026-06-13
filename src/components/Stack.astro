@@ -25,7 +25,7 @@ const logos = [
   </div>
 
   <div class="relative w-full">
-    <div class="w-full bg-white/[0.07] px-5 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.2)] sm:px-8 sm:py-10">
+    <div class="w-full bg-white/[0.07] px-5 py-8 shadow-2xl sm:px-8 sm:py-10">
       <div class="mx-auto max-w-3xl text-center" data-reveal="soft">
         <p class="text-xs font-semibold uppercase  tracking-tight text-white/60">
           Tools and Workflow
@@ -42,15 +42,14 @@ const logos = [
         </p>
       </div>
 
-      <div class="mx-auto mt-8 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <div class="flex w-max animate-slide-logos gap-16">
+      <div
+        class="logo-marquee mx-auto mt-8 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]"
+        data-reveal="soft"
+      >
+        <div class="logo-marquee__track flex w-max gap-16">
           {
-            logos.concat(logos).map((logo, index) => (
-              <div
-                class="flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]"
-                data-reveal="scale"
-                style={`--reveal-delay:${Math.min(index, 8) * 70}ms;`}
-              >
+            logos.concat(logos).map((logo) => (
+              <div class="flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -67,3 +66,25 @@ const logos = [
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes logoMarqueeOnce {
+    to {
+      transform: translateX(calc(-50% - 2rem));
+    }
+  }
+
+  .logo-marquee__track {
+    transform: translateX(0);
+  }
+
+  .logo-marquee.is-visible .logo-marquee__track {
+    animation: logoMarqueeOnce 26s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee.is-visible .logo-marquee__track {
+      animation: none;
+    }
+  }
+</style>
