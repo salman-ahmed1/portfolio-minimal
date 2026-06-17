@@ -128,14 +128,12 @@ const proofPoints = [
     </div>
   </div>
 
-  <div class="relative mx-auto mt-12 w-full max-w-7xl overflow-hidden">
+  <div class="relative mx-auto mt-12 w-full max-w-7xl overflow-hidden" data-reveal="soft">
     <div class="testimonial-track flex gap-6">
       {
-        testimonials.concat(testimonials).map((testimonial, index) => (
+        testimonials.concat(testimonials).map((testimonial) => (
           <article
             class="site-panel-shadow testimonial-card dark-panel flex w-[min(88vw,26rem)] shrink-0 flex-col overflow-hidden rounded-3xl border backdrop-blur-sm"
-            data-reveal="horizontal"
-            style={`--reveal-delay:${Math.min(index, 2) * 120}ms;`}
           >
             <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
               <div>
@@ -175,6 +173,37 @@ const proofPoints = [
     </div>
     <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-dark-surface to-transparent"></div>
     <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-dark-surface to-transparent"></div>
+  </div>
+
+  <div
+    class="relative mt-12 -mx-4 min-h-80 overflow-hidden border-y border-white/10 bg-black px-4 py-12 sm:-mx-6 sm:px-6 sm:py-14 lg:-mx-8 lg:px-8 lg:py-16"
+    data-reveal="soft"
+  >
+    <img
+      src="/assets/clients-accross-the-globe.png"
+      alt="World map showing trusted clients across USA, UK, Germany, Estonia, and Bangladesh"
+      class="pointer-events-none absolute left-96 top-40 h-full w-5/6 object-cover opacity-32 saturate-125 [mask-image:linear-gradient(90deg,transparent,black_14%,black_86%,transparent)]"
+      loading="lazy"
+    />
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_67%_44%,rgba(116,93,255,0.14),transparent_32%),linear-gradient(90deg,rgba(0,0,0,0.96),rgba(0,0,0,0.68)_36%,rgba(0,0,0,0.58)_64%,rgba(0,0,0,0.92))]"></div>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-dark-surface to-transparent"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-dark-surface to-transparent"></div>
+
+    <div class="relative z-10 mx-auto flex min-h-64 w-full max-w-7xl flex-col items-center justify-center text-center">
+      <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.28em]">
+        Global Delivery
+      </p>
+      <h3 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tighter text-white sm:text-5xl">
+        Trusted by businesses
+        <span class="dark-highlight">across the globe.</span>
+      </h3>
+      <p class="dark-body mt-4 max-w-2xl text-base leading-7 sm:text-lg">
+        Visual and digital work delivered for clients across the
+        <span class="font-semibold text-white">USA, UK, Germany, Estonia,</span>
+        and
+        <span class="font-semibold text-white">Bangladesh</span>.
+      </p>
+    </div>
   </div>
 </section>
 
