@@ -233,16 +233,21 @@ const categoryCopyJson = JSON.stringify(categoryCopy);
         <div class="flex justify-center pt-2">
           <button
             type="button"
-            class="group inline-flex size-12 w-32 items-center justify-center rounded-full border border-white/12 bg-white/5 text-2xl leading-none text-white transition-colors duration-200 hover:bg-white/10"
+            class="group inline-flex size-12 w-32 items-center justify-center rounded-full border border-white/20 bg-white/5 text-2xl leading-none text-white transition-colors duration-200 hover:bg-white/10"
             aria-label="Show more portfolio projects"
             aria-expanded="false"
             data-show-more-toggle
             data-reveal="soft"
             style="--reveal-delay:220ms;"
           >
-            <span class="pr-2 text-sm font-light">See More</span>
-            <span class="transition-transform duration-200 group-aria-expanded:rotate-180" aria-hidden="true">
-              &#8595;
+            <span class="pr-1.5 text-sm font-light">See More</span>
+            <span
+              class="inline-block transition-transform duration-300 group-aria-expanded:rotate-180"
+              aria-hidden="true"
+            >
+              <svg class="see-more-arrow inline-block size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 4v12M6 12l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             </span>
           </button>
         </div>
@@ -320,6 +325,32 @@ const categoryCopyJson = JSON.stringify(categoryCopy);
     </div>
   </div>
 </section>
+
+<style>
+  .see-more-arrow {
+    animation: see-more-nudge 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  @keyframes see-more-nudge {
+    0%{
+      transform: translateY(-1px);
+    }
+
+    
+    50% {
+      transform: translateY(1.5px);
+    }
+      100% {
+        transform: translateY(-1px);
+      }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .see-more-arrow {
+      animation: none;
+    }
+  }
+</style>
 
 <script is:inline type="application/json" id="project-category-copy" set:html={categoryCopyJson}></script>
 
