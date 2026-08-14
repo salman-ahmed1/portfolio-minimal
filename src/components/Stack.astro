@@ -20,25 +20,25 @@ const logos = [
 
 <section class="dark-section relative w-full overflow-hidden py-16 sm:py-20">
   <div class="pointer-events-none absolute inset-0">
-    <div class="absolute left-12 top-10 h-48 w-48 rounded-full bg-white/8 blur-3xl"></div>
-    <div class="absolute right-12 bottom-0 h-56 w-56 rounded-full bg-white/6 blur-3xl"></div>
+    <div class="absolute left-12 top-10 h-48 w-48 rounded-full bg-primary/10 blur-3xl"></div>
+    <div class="absolute right-12 bottom-0 h-56 w-56 rounded-full bg-accent/5 blur-3xl"></div>
   </div>
 
   <div class="relative w-full">
-    <div class="w-full bg-white/[0.07] px-5 py-8 shadow-2xl sm:px-8 sm:py-10">
+    <div class="theme-subtle-surface theme-border w-full border-y px-5 py-8 sm:px-8 sm:py-10">
       <div class="mx-auto max-w-3xl text-center" data-reveal="soft">
-        <p class="text-xs font-semibold uppercase  tracking-tight text-white/60">
+        <p class="dark-kicker text-xs font-semibold uppercase tracking-tight">
           Tools and Workflow
         </p>
-        <h2 class="mt-4 text-2xl font-semibold tracking-tighter text-white sm:text-3xl lg:text-4xl">
+        <h2 class="theme-strong mt-4 text-2xl font-semibold tracking-tighter sm:text-3xl lg:text-4xl">
           The tech behind the
-          <span class="text-white/75"> visuals</span>.
+          <span class="dark-highlight"> visuals</span>.
         </h2>
-        <p class="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/72 sm:text-base">
+        <p class="dark-body mx-auto mt-3 max-w-2xl text-sm leading-7 sm:text-base">
           A hand-picked production stack optimized for
-          <span class="font-medium text-white"> jaw-dropping quality</span>,
-          <span class="font-medium text-white"> fast turnaround times</span>, and
-          <span class="font-medium text-white"> seamless web integration</span>.
+          <span class="theme-strong font-medium"> jaw-dropping quality</span>,
+          <span class="theme-strong font-medium"> fast turnaround times</span>, and
+          <span class="theme-strong font-medium"> seamless web integration</span>.
         </p>
       </div>
 
@@ -49,14 +49,14 @@ const logos = [
         <div class="logo-marquee__track flex w-max gap-16">
           {
             logos.concat(logos).map((logo) => (
-              <div class="flex size-20 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]">
+              <div class="dark-panel-soft flex size-20 items-center justify-center rounded-2xl border">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={38}
                   height={38}
                   loading="eager"
-                  class="h-9 w-9 object-contain grayscale brightness-0 invert opacity-65 contrast-75"
+                  class="theme-logo h-9 w-9 object-contain"
                 />
               </div>
             ))

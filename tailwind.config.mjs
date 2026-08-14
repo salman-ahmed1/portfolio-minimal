@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -10,11 +11,7 @@ export default {
         background: "hsl(var(--background))",
         accent: "hsl(var(--accent))",
         foreground: "hsl(var(--foreground))",
-        "muted-foreground": "hsl(var(--muted-foreground))",
         border: "hsl(var(--border))",
-        "dark-border": "hsl(var(--dark-border))",
-        card: "hsl(var(--card))",
-        "dark-card": "hsl(var(--dark-card))",
       },
     },
   },
