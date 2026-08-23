@@ -1,0 +1,748 @@
+---
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cashJournalImage from "../../public/assets/cash-journal.webp";
+import dogServiceImage from "../../public/assets/dog-service-landing-page.webp";
+import simonGameImage from "../../public/assets/simon-game-site.webp";
+
+const title = "Web Development | Salman Ahmed";
+const description =
+  "Web development by Salman Ahmed for responsive business websites, landing pages, and modern web interfaces, with design, SEO, and performance in mind.";
+const canonical = "https://sal3dvisuals.vercel.app/web-development";
+const openGraphImage =
+  "https://sal3dvisuals.vercel.app/assets/dog-service-landing-page.webp";
+
+const services = [
+  {
+    title: "Business Websites",
+    description:
+      "Professional, responsive websites that explain your offer clearly and guide visitors toward the next useful action.",
+  },
+  {
+    title: "Landing Pages",
+    description:
+      "Focused pages for products, services, and campaigns, built around a clear message and conversion path.",
+  },
+  {
+    title: "Frontend Development",
+    description:
+      "Responsive interfaces developed with modern HTML, CSS, JavaScript, and practical component-based workflows.",
+  },
+  {
+    title: "Website UI Implementation",
+    description:
+      "Turn an approved Figma file or design concept into a working interface that adapts across screen sizes.",
+  },
+  {
+    title: "API-Connected Experiences",
+    description:
+      "Connect frontend interfaces to REST APIs and dynamic data when the project needs more than static content.",
+  },
+  {
+    title: "Website Improvements",
+    description:
+      "Improve an existing site's responsiveness, usability, visual presentation, and frontend consistency.",
+  },
+];
+
+const projects = [
+  {
+    title: "Expense Tracker Web App",
+    label: "Responsive web application",
+    description:
+      "A finance tracker for recording income and expenses, reviewing transaction history, and understanding the current balance at a glance.",
+    role: "Frontend development and interface design",
+    stack: ["Vue", "Tailwind CSS", "Local Storage"],
+    highlights: [
+      "Add and organize income and expense entries",
+      "Calculate and display a running balance",
+      "Keep transaction data in local storage",
+      "Present the workflow in a responsive single-page interface",
+    ],
+    image: cashJournalImage,
+    imageWidth: 698,
+    imageHeight: 798,
+    alt: "Responsive Cash Journal expense tracker web application",
+    href: "https://personal-journal01.netlify.app/",
+  },
+  {
+    title: "Simon Memory Game",
+    label: "Interactive JavaScript project",
+    description:
+      "A browser-based memory game that generates color patterns, checks player input, and responds with sound, animation, and game-state feedback.",
+    role: "Frontend development and interaction logic",
+    stack: ["JavaScript", "jQuery", "HTML", "CSS"],
+    highlights: [
+      "Generate and extend randomized play patterns",
+      "Handle keyboard and player input",
+      "Coordinate sound and visual feedback",
+      "Manage level progression and game-over states",
+    ],
+    image: simonGameImage,
+    imageWidth: 1102,
+    imageHeight: 859,
+    alt: "Simon memory game interface developed with JavaScript and jQuery",
+    href: "https://salman-ahmed1.github.io/Simon-game/",
+  },
+  {
+    title: "Dog Service Landing Page",
+    label: "Responsive Bootstrap landing page",
+    description:
+      "A service-page concept created to practice responsive layout, structured feature content, social proof, pricing cards, and clear calls to action.",
+    role: "Frontend development and responsive UI implementation",
+    stack: ["HTML", "CSS", "Bootstrap"],
+    highlights: [
+      "Build a responsive, left-aligned hero layout",
+      "Organize service benefits into scannable sections",
+      "Create testimonial and pricing-card patterns",
+      "Adapt the interface across desktop and mobile widths",
+    ],
+    image: dogServiceImage,
+    imageWidth: 1905,
+    imageHeight: 920,
+    alt: "Responsive dog service landing page built with Bootstrap",
+    href:
+      "https://salman-ahmed1.github.io/My-Projects/Bootstrap-1/Dog%20Project/index.html",
+  },
+];
+
+const advantages = [
+  {
+    title: "Design-aware development",
+    description:
+      "Layout, hierarchy, typography, and visual communication are considered while the interface is being built.",
+  },
+  {
+    title: "Search-ready foundations",
+    description:
+      "Semantic content, metadata, heading structure, and crawlability are treated as part of the build—not an afterthought.",
+  },
+  {
+    title: "Performance-conscious implementation",
+    description:
+      "Responsive experiences are kept focused, with careful use of media, animation, and frontend code.",
+  },
+  {
+    title: "Marketing-aware thinking",
+    description:
+      "Each page should help visitors understand the offer and move toward a meaningful business action.",
+  },
+];
+
+const process = [
+  {
+    title: "Understand",
+    description:
+      "Clarify the website's purpose, audience, content, and required functionality.",
+  },
+  {
+    title: "Plan",
+    description:
+      "Define the structure, content hierarchy, interface direction, and technical approach.",
+  },
+  {
+    title: "Build",
+    description:
+      "Develop the responsive interface, interactions, and required functionality.",
+  },
+  {
+    title: "Refine & Launch",
+    description:
+      "Test across screen sizes, improve usability and performance, and prepare the site for deployment.",
+  },
+];
+
+const technologies = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Bootstrap", "jQuery"],
+  },
+  {
+    title: "Backend & Data",
+    items: ["Node.js", "npm", "REST APIs", "PostgreSQL", "Postman"],
+  },
+  {
+    title: "Design & Workflow",
+    items: ["Figma", "UI/UX", "SEO", "Google Search Console", "Analytics"],
+  },
+];
+
+const reasons = [
+  {
+    title: "Clear communication",
+    description:
+      "You stay informed, and technical decisions are explained in practical language.",
+  },
+  {
+    title: "Creative + technical thinking",
+    description:
+      "Design awareness and implementation work together instead of competing with each other.",
+  },
+  {
+    title: "Responsive by default",
+    description:
+      "Mobile is considered from the start, not squeezed in after the desktop version is finished.",
+  },
+  {
+    title: "Business-aware decisions",
+    description:
+      "The interface supports what visitors need to understand and what you want them to do next.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What types of websites do you build?",
+    answer:
+      "I build responsive business websites, landing pages, frontend interfaces, and focused web applications. I can also improve the presentation and responsiveness of an existing site.",
+  },
+  {
+    question: "Can you turn an existing design or Figma file into a working website?",
+    answer:
+      "Yes. I can translate an approved design or Figma concept into responsive HTML, CSS, and JavaScript while preserving its hierarchy and visual direction.",
+  },
+  {
+    question: "Do you build responsive websites?",
+    answer:
+      "Yes. Responsive behavior is planned from the start so the content and controls remain usable across phones, tablets, laptops, and wider screens.",
+  },
+  {
+    question: "Can you help with SEO and Google Search Console?",
+    answer:
+      "I can build SEO-ready foundations, including semantic HTML, metadata, heading structure, crawlable content, image text alternatives, and Search Console readiness. I do not promise specific rankings.",
+  },
+  {
+    question: "Can you improve an existing website?",
+    answer:
+      "Yes. Depending on the codebase, I can help improve responsiveness, layout consistency, usability, frontend presentation, and page structure.",
+  },
+  {
+    question: "What technologies do you work with?",
+    answer:
+      "My web toolkit includes HTML, CSS, JavaScript, jQuery, Bootstrap, Tailwind CSS, Node.js, npm, REST APIs, PostgreSQL, Postman, and Figma.",
+  },
+  {
+    question: "Can you work with international clients?",
+    answer:
+      "Yes. Projects can be discussed, reviewed, and delivered remotely with clear milestones and practical communication.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: canonical,
+  description,
+  about: {
+    "@type": "Service",
+    name: "Web Development",
+    serviceType: "Web Development",
+    provider: {
+      "@type": "Person",
+      name: "Salman Ahmed",
+      alternateName: "Sal 3D Visuals",
+      url: "https://sal3dvisuals.vercel.app/",
+      sameAs: [
+        "https://github.com/salman-ahmed1/",
+        "https://www.linkedin.com/in/salman-ahmed-designer",
+        "https://x.com/Sal3DVisuals",
+      ],
+    },
+  },
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  openGraphTitle="Web Development by Salman Ahmed"
+  openGraphDescription={description}
+  openGraphImage={openGraphImage}
+  openGraphImageAlt="Responsive website interface from Salman Ahmed's web development portfolio"
+>
+  <a
+    href="#main-content"
+    class="theme-primary-cta fixed left-4 top-4 z-50 -translate-y-24 rounded-xl px-4 py-3 text-sm font-semibold focus:translate-y-0"
+  >
+    Skip to content
+  </a>
+
+  <main id="main-content" class="dark-section relative w-full overflow-hidden">
+    <Nav currentPage="web-development" />
+
+    <section
+      id="web-hero"
+      class="relative isolate overflow-hidden px-4 pb-20 pt-40 sm:px-6 sm:pb-24 sm:pt-44 lg:px-8 lg:pb-28 lg:pt-48"
+    >
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute -left-24 top-20 size-96 rounded-full bg-primary/10 blur-[150px]"></div>
+        <div class="absolute -right-24 top-1/3 size-96 rounded-full bg-accent/10 blur-[170px]"></div>
+      </div>
+
+      <div class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+        <div data-reveal="hero">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.38em]">
+            Web Development
+          </p>
+          <h1 class="theme-strong mt-6 max-w-[14ch] text-balance text-4xl font-semibold leading-[1.08] tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+            Websites built to look sharp, work smoothly, and
+            <span class="dark-highlight">help your business grow.</span>
+          </h1>
+          <p class="dark-body mt-6 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">
+            I help businesses, founders, and teams turn ideas into responsive websites and landing pages, combining clean interfaces with thoughtful user experience, SEO-ready foundations, and performance in mind.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href="/#contact"
+              class="theme-primary-cta site-cta-shadow inline-flex min-h-14 items-center justify-center rounded-2xl px-7 py-4 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              Let's Build Your Website
+            </a>
+            <a
+              href="#web-projects"
+              class="theme-control inline-flex min-h-14 items-center justify-center rounded-2xl border px-7 py-4 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              View Web Projects
+            </a>
+          </div>
+
+          <p class="dark-muted mt-6 text-sm leading-6">
+            Responsive development &middot; Modern UI &middot; SEO-ready structure &middot; Analytics-friendly
+          </p>
+        </div>
+
+        <div class="relative" data-reveal="scale" style="--reveal-delay:160ms;">
+          <div class="site-panel-shadow-soft dark-panel overflow-hidden rounded-3xl border p-3 sm:p-4">
+            <div class="media-card overflow-hidden rounded-2xl border">
+              <div class="flex items-center gap-2 border-b border-white/10 bg-black px-4 py-3">
+                <span class="size-2.5 rounded-full bg-[#ff6b5f]"></span>
+                <span class="size-2.5 rounded-full bg-[#f6c56b]"></span>
+                <span class="size-2.5 rounded-full bg-[#54c780]"></span>
+                <span class="ml-2 truncate text-xs text-white/60">Responsive service landing page</span>
+              </div>
+              <Image
+                src={dogServiceImage}
+                alt="Responsive dog service landing page displayed in a browser frame"
+                width="1905"
+                height="920"
+                loading="eager"
+                fetchpriority="high"
+                class="aspect-[1.8/1] h-auto w-full object-cover object-top"
+              />
+            </div>
+
+            <div class="mt-3 grid grid-cols-2 gap-3">
+              <div class="theme-subtle-surface theme-border overflow-hidden rounded-2xl border p-2">
+                <Image
+                  src={simonGameImage}
+                  alt="Simon memory game interface preview"
+                  width="1102"
+                  height="859"
+                  class="aspect-[4/3] h-auto w-full rounded-xl object-cover object-top"
+                />
+              </div>
+              <div class="theme-subtle-surface theme-border overflow-hidden rounded-2xl border p-2">
+                <Image
+                  src={cashJournalImage}
+                  alt="Cash Journal expense tracker interface preview"
+                  width="698"
+                  height="798"
+                  class="aspect-[4/3] h-auto w-full rounded-xl object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="dark-panel-soft theme-border absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-xs font-semibold backdrop-blur-xl">
+            <span class="size-2 rounded-full bg-accent"></span>
+            Design + development by Salman Ahmed
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto w-full max-w-7xl">
+        <div class="max-w-3xl" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Web Development Services
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            What I can build for you.
+          </h2>
+          <p class="dark-body mt-4 max-w-2xl text-base leading-7 sm:text-lg">
+            From a focused landing page to an interactive frontend, each build starts with what your visitors need to understand and do.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            services.map((service, index) => (
+              <article
+                class="dark-panel rounded-3xl border p-6 sm:p-7"
+                data-reveal="scale"
+                style={`--reveal-delay:${index * 70}ms;`}
+              >
+                <span class="dark-kicker inline-flex size-10 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-sm font-semibold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 class="theme-strong mt-5 text-xl font-semibold tracking-tight">
+                  {service.title}
+                </h3>
+                <p class="dark-body mt-3 text-sm leading-6 sm:text-base sm:leading-7">
+                  {service.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="web-projects" class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute right-0 top-1/3 size-96 rounded-full bg-primary/10 blur-[170px]"></div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-7xl">
+        <div class="max-w-3xl" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Real Project Work
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            Selected Web Development Work
+          </h2>
+          <p class="dark-body mt-4 max-w-2xl text-base leading-7 sm:text-lg">
+            These are existing projects from my portfolio. Each one demonstrates a different part of responsive interface development and interaction design.
+          </p>
+        </div>
+
+        <div class="mt-10 space-y-6">
+          {
+            projects.map((project, index) => (
+              <article
+                class="dark-panel overflow-hidden rounded-3xl border p-3 sm:p-4 lg:p-5"
+                data-reveal="scale"
+              >
+                <div class="grid gap-7 lg:grid-cols-2 lg:items-center lg:gap-10">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class:list={[
+                      "media-card group block overflow-hidden rounded-2xl border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                      index % 2 === 1 && "lg:order-2",
+                    ]}
+                    aria-label={`Open the live ${project.title} project`}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      width={project.imageWidth}
+                      height={project.imageHeight}
+                      loading="lazy"
+                      class="aspect-[16/10] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+                    />
+                  </a>
+
+                  <div class:list={["px-2 pb-4 sm:px-3 lg:py-5", index % 2 === 1 && "lg:order-1"]}>
+                    <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.24em]">
+                      {project.label}
+                    </p>
+                    <h3 class="theme-strong mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                      {project.title}
+                    </h3>
+                    <p class="dark-body mt-4 text-base leading-7">
+                      {project.description}
+                    </p>
+
+                    <dl class="mt-5 grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <dt class="dark-muted text-xs font-semibold uppercase tracking-[0.18em]">My role</dt>
+                        <dd class="theme-strong mt-2 text-sm font-medium leading-6">{project.role}</dd>
+                      </div>
+                      <div>
+                        <dt class="dark-muted text-xs font-semibold uppercase tracking-[0.18em]">Built with</dt>
+                        <dd class="theme-strong mt-2 text-sm font-medium leading-6">{project.stack.join(" · ")}</dd>
+                      </div>
+                    </dl>
+
+                    <ul class="dark-body mt-5 grid gap-2 text-sm leading-6 sm:grid-cols-2">
+                      {project.highlights.map((highlight) => (
+                        <li class="flex gap-2">
+                          <span class="dark-highlight mt-0.5" aria-hidden="true">✓</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="theme-control mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border px-5 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    >
+                      View Live Project
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8 ">
+      <div class="mx-auto w-full max-w-7xl shine">
+        <div class="dark-panel grid overflow-hidden rounded-3xl border lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="theme-border border-b p-7 sm:p-10 lg:border-b-0 lg:border-r lg:p-12" data-reveal="soft">
+            <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+              A Multidisciplinary Approach
+            </p>
+            <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+              Built with the bigger picture in mind.
+            </h2>
+            <p class="dark-body mt-5 text-base leading-7 sm:text-lg sm:leading-8">
+              My background across design, animation, digital marketing, SEO, analytics, and development helps me consider how your website looks, communicates, and supports a real goal.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2">
+            {
+              advantages.map((advantage, index) => (
+                <article
+                  class:list={[
+                    "theme-border p-7 sm:p-8",
+                    index < 2 && "border-b",
+                    index % 2 === 0 && "sm:border-r",
+                  ]}
+                  data-reveal="soft"
+                  style={`--reveal-delay:${index * 80}ms;`}
+                >
+                  <h3 class="theme-strong text-lg font-semibold tracking-tight">
+                    {advantage.title}
+                  </h3>
+                  <p class="dark-body mt-3 text-sm leading-6">
+                    {advantage.description}
+                  </p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="web-process" class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto w-full max-w-7xl">
+        <div class="max-w-3xl" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Development Process
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            From idea to working website.
+          </h2>
+          <p class="dark-body mt-4 max-w-2xl text-base leading-7 sm:text-lg">
+            A clear process keeps the project focused and makes each decision easier to review.
+          </p>
+        </div>
+
+        <ol class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            process.map((step, index) => (
+              <li
+                class="dark-panel relative rounded-3xl border p-6 sm:p-7"
+                data-reveal="scale"
+                style={`--reveal-delay:${index * 90}ms;`}
+              >
+                <span class="dark-kicker text-sm font-semibold">0{index + 1}</span>
+                <h3 class="theme-strong mt-8 text-xl font-semibold tracking-tight">{step.title}</h3>
+                <p class="dark-body mt-3 text-sm leading-6">{step.description}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto w-full max-w-7xl">
+        <div class="text-center" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Technical Toolkit
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            Technologies I work with
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-4 lg:grid-cols-3">
+          {
+            technologies.map((group, index) => (
+              <article
+                class="dark-panel rounded-3xl border p-6 sm:p-8"
+                data-reveal="scale"
+                style={`--reveal-delay:${index * 90}ms;`}
+              >
+                <h3 class="theme-strong text-xl font-semibold tracking-tight">{group.title}</h3>
+                <ul class="mt-5 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li class="theme-control rounded-full border px-3 py-1.5 text-xs font-semibold sm:text-sm">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
+        <div data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            SEO & Analytics Awareness
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            Built with search and measurement in mind.
+          </h2>
+          <p class="dark-body mt-5 text-base leading-7 sm:text-lg sm:leading-8">
+            A useful website should be understandable to people, crawlable by search engines, and ready to measure. I account for those foundations during development without making unrealistic ranking promises.
+          </p>
+        </div>
+
+        <div class="dark-panel rounded-3xl border p-6 sm:p-8" data-reveal="scale">
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {
+              [
+                "Semantic HTML",
+                "Descriptive page titles",
+                "Metadata and social previews",
+                "Logical heading hierarchy",
+                "Crawlable page copy",
+                "Mobile responsiveness",
+                "Performance-minded media",
+                "Descriptive image alt text",
+                "Internal linking",
+                "Analytics integration readiness",
+                "Search Console readiness",
+                "Accessible interaction patterns",
+              ].map((item) => (
+                <li class="theme-subtle-surface theme-border flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm font-medium">
+                  <span class="dark-highlight" aria-hidden="true">✓</span>
+                  <span class="theme-strong">{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto w-full max-w-7xl">
+        <div class="max-w-3xl" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Working Together
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            What you can expect from me
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            reasons.map((reason, index) => (
+              <article
+                class="dark-panel rounded-3xl border p-6"
+                data-reveal="scale"
+                style={`--reveal-delay:${index * 80}ms;`}
+              >
+                <h3 class="theme-strong text-lg font-semibold tracking-tight">{reason.title}</h3>
+                <p class="dark-body mt-3 text-sm leading-6">{reason.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto w-full max-w-4xl">
+        <div class="text-center" data-reveal="soft">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Frequently Asked Questions
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            Questions before we start
+          </h2>
+        </div>
+
+        <div class="mt-10 space-y-3">
+          {
+            faqs.map((faq) => (
+              <details class="dark-panel group rounded-2xl border px-5 py-1 sm:px-6" data-reveal="soft">
+                <summary class="theme-strong flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-lg">
+                  {faq.question}
+                  <span class="dark-highlight text-xl transition-transform duration-200 group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="dark-body max-w-3xl pb-5 text-sm leading-7 sm:text-base">
+                  {faq.answer}
+                </p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 lg:px-8">
+      <div
+        class="site-panel-shadow-soft dark-panel relative mx-auto w-full max-w-7xl overflow-hidden rounded-3xl border px-6 py-12 text-center sm:px-10 sm:py-16"
+        data-reveal="scale"
+      >
+        <div class="pointer-events-none absolute inset-0">
+          <div class="absolute left-1/4 top-0 size-72 rounded-full bg-primary/12 blur-[120px]"></div>
+          <div class="absolute bottom-0 right-1/4 size-72 rounded-full bg-accent/10 blur-[120px]"></div>
+        </div>
+        <div class="relative mx-auto max-w-3xl">
+          <p class="dark-kicker text-xs font-semibold uppercase tracking-[0.32em]">
+            Start a Project
+          </p>
+          <h2 class="theme-strong mt-4 text-balance text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+            Have a website in mind? Let's build it.
+          </h2>
+          <p class="dark-body mx-auto mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">
+            Tell me what you're working on—whether you're starting from an idea, improving an existing site, or bringing a finished design to life.
+          </p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a
+              href="/#contact"
+              class="theme-primary-cta site-cta-shadow inline-flex min-h-14 items-center justify-center rounded-2xl px-7 py-4 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              Start a Conversation
+            </a>
+            <a
+              href="#web-projects"
+              class="theme-control inline-flex min-h-14 items-center justify-center rounded-2xl border px-7 py-4 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              Review My Web Work
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</Layout>

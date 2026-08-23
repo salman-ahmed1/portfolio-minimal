@@ -1,18 +1,18 @@
 ---
-import Header from "@/components/Header.astro";
+import Nav from "@/components/Nav.astro";
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import Stack from "@/components/Stack.astro";
 import Projects from "@/components/Projects.astro";
 import Testimonials from "@/components/Testimonials.astro";
-import About from "@/components/About.astro";
+import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="Struggling with flat visuals? Get stunning 3d animation, modelling, & product visualization that captivates customers & boosts sales.">
   <main class="relative flex w-full flex-col items-center justify-start bg-background">
     <section class="dark-section w-full">
-      <Header />
+      <Nav />
       <Hero />
     </section>
     <div id="process" class="w-full">
@@ -25,7 +25,7 @@ import Footer from "@/components/Footer.astro";
       <Testimonials />
     </div>
     <div id="contact" class="w-full">
-      <About />
+      <Contact />
       <Footer />
     </div>
   </main>
