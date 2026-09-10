@@ -106,14 +106,14 @@ const categoryCopy = {
 const categoryCopyJson = JSON.stringify(categoryCopy);
 ---
 
-<section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+<section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8 2xl:px-12 2xl:py-32">
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute left-0 top-20 h-80 w-80 rounded-full bg-primary/10 blur-[150px]"></div>
     <div class="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-[180px]"></div>
   </div>
 
-  <div class="relative mx-auto w-full max-w-7xl">
-    <div class="site-panel-shadow dark-panel rounded-3xl border px-5 py-6 backdrop-blur-sm sm:px-7 sm:py-7 lg:px-8">
+  <div class="relative mx-auto w-full max-w-7xl 2xl:max-w-screen-2xl">
+    <div class="site-panel-shadow dark-panel rounded-3xl border px-5 py-6 backdrop-blur-sm sm:px-7 sm:py-7 lg:px-8 2xl:px-10 2xl:py-9">
       <div
         class="theme-border flex items-center justify-center gap-8 overflow-x-auto border-b pb-5"
         aria-label="Project categories"
@@ -146,7 +146,7 @@ const categoryCopyJson = JSON.stringify(categoryCopy);
             {categoryCopy.visuals.kicker}
           </p>
           <h2
-            class="theme-strong mt-4 text-2xl font-semibold tracking-normal sm:text-3xl"
+            class="theme-strong mt-4 text-2xl font-semibold tracking-normal sm:text-3xl 2xl:text-4xl"
             data-project-title
             set:html={categoryCopy.visuals.title}
           ></h2>

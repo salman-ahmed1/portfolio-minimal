@@ -185,7 +185,7 @@
   .theme-nav {
     color: hsl(var(--hero-text-strong));
     border-color: hsl(var(--nav-ring) / 0.78);
-    background-color: hsl(var(--nav-background) / 0.84);
+    background-color: hsl(var(--nav-background) / 0.98);
   }
 
   .theme-nav-muted {
@@ -357,7 +357,7 @@
   pointer-events: none;
   z-index: 10;
 
-  animation: shine-sweep 10s ease-in-out infinite;
+  animation: shine-sweep 8s ease-in-out infinite;
 }
 
 

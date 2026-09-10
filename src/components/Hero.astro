@@ -5,7 +5,7 @@ const heroVideo =
 
 <section
   id="hero"
-  class="relative isolate w-full overflow-hidden px-4 pb-20 pt-0 sm:px-6 sm:pb-24 sm:pt-0 lg:px-8 lg:pb-28"
+  class="relative isolate w-full overflow-hidden px-4 pb-20 pt-0 sm:px-6 sm:pb-24 sm:pt-0 lg:px-8 lg:pb-28 2xl:px-12 2xl:pb-36"
 >
   <div class="pointer-events-none absolute inset-0 -z-20 overflow-hidden rounded-b-4xl">
     <div class="hero-video absolute inset-0 ">
@@ -24,21 +24,21 @@ const heroVideo =
   <div class="pointer-events-none absolute left-0 top-1/2 -z-10 size-72 -translate-y-1/2 rounded-full bg-primary/12 blur-[140px]"></div>
   <div class="pointer-events-none absolute bottom-10 right-0 -z-10 size-80 rounded-full bg-secondary/12 blur-[160px]"></div>
 
-  <div class="mx-auto flex min-h-dvh w-full max-w-5xl items-center justify-center pt-24 sm:pt-28 lg:pt-32">
-    <div class="theme-strong flex max-w-3xl flex-col items-center text-center">
+  <div class="mx-auto flex min-h-dvh w-full max-w-5xl items-center justify-center pt-24 sm:pt-28 lg:pt-32 2xl:max-w-screen-2xl 2xl:pt-36">
+    <div class="theme-strong flex max-w-3xl flex-col items-center text-center 2xl:max-w-5xl">
       <span
         class="hero-copy dark-kicker opacity-0 text-xs font-semibold uppercase tracking-[0.42em]"
       >
         3D Product Visualization & Animation
       </span>
       <h1
-        class="hero-copy hero-copy-delay-1 theme-strong mt-6 text-balance text-5xl font-semibold leading-tight tracking-tighter opacity-0 sm:text-6xl md:text-7xl lg:text-8xl"
+        class="hero-copy hero-copy-delay-1 theme-strong mt-6 text-balance text-5xl font-semibold leading-tight tracking-tighter opacity-0 sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl"
       >
         Premium Visuals
         for brands to <span class="bg-gradient-to-r from-primary via-violet-500 to-indigo-500 bg-clip-text text-transparent dark:via-violet-300 dark:to-indigo-300"> stand out.</span>
       </h1>
       <p
-        class="hero-copy hero-copy-delay-2 dark-body mt-8 flex w-full max-w-xl items-center justify-center gap-x-1 text-center font-light text-base leading-7 opacity-0 sm:text-lg sm:leading-8"
+        class="hero-copy hero-copy-delay-2 dark-body mt-8 flex w-full max-w-xl items-center justify-center gap-x-1 text-center font-light text-base leading-7 opacity-0 sm:text-lg sm:leading-8 2xl:mt-10 2xl:max-w-2xl 2xl:text-xl"
         aria-label="Ideas into visuals, websites, and digital assets"
       >
         <span class="theme-strong shrink-0 font-light" aria-hidden="true">Ideas into</span>
@@ -126,18 +126,13 @@ const heroVideo =
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.77777778vh;
-    min-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    min-width: 177.77777778vh;
     min-height: 56.25vw;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.12);
+    transform-origin: center;
     border: 0;
-  }
-
-  @media (max-aspect-ratio: 16/9) {
-    .hero-video__frame {
-      width: 100vw;
-      height: 56.25vw;
-    }
   }
 
 </style>

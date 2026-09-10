@@ -26,7 +26,15 @@ const testimonials = [
   },
 ];
 
-const proofPoints = [
+interface ProofPoint {
+  target: number;
+  decimals?: number;
+  suffix?: string;
+  label: string;
+  stars?: boolean;
+}
+
+const proofPoints: ProofPoint[] = [
   {
     target: 100,
     suffix: "%",
@@ -50,20 +58,23 @@ const proofPoints = [
     label: "Rated Hours",
   },
 ];
+
+const formatProofValue = ({ target, decimals = 0, suffix = "" }: ProofPoint) =>
+  `${target.toFixed(decimals)}${suffix}`;
 ---
 
-<section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+<section class="dark-section relative w-full overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8 2xl:px-12 2xl:py-32">
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/12 blur-[140px]"></div>
     <div class="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-secondary/10 blur-[160px]"></div>
   </div>
 
-  <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-12">
-    <div class="mx-auto flex max-w-3xl flex-col items-center text-center" data-reveal="soft">
+  <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-12 2xl:max-w-screen-2xl 2xl:gap-16">
+    <div class="mx-auto flex max-w-3xl flex-col items-center text-center 2xl:max-w-4xl" data-reveal="soft">
       <span class="dark-kicker text-xs font-semibold uppercase tracking-[0.38em]">
         Client Stories
       </span>
-      <h2 class="theme-strong mt-5 max-w-[13ch] text-balance text-4xl font-semibold leading-tight tracking-tighter sm:text-5xl">
+      <h2 class="theme-strong mt-5 max-w-[13ch] text-balance text-4xl font-semibold leading-tight tracking-tighter sm:text-5xl 2xl:text-6xl">
         Trusted by clients who needed
         <span class="dark-highlight"> {" "}better visuals {" "}</span>
         fast.
@@ -77,10 +88,10 @@ const proofPoints = [
     data-reveal="soft"
     data-count-group
   >
-    <div class="mx-auto grid w-full max-w-7xl gap-0 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+    <div class="mx-auto grid w-full max-w-7xl gap-0 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8 2xl:max-w-screen-2xl 2xl:px-12">
       {
         proofPoints.map((point) => (
-          <article class="theme-border flex flex-col items-center justify-center px-6 py-8 text-center sm:py-10 lg:min-h-56 lg:border-r last:lg:border-r-0">
+          <article class="theme-border flex flex-col items-center justify-center px-6 py-8 text-center sm:py-10 lg:min-h-56 lg:border-r last:lg:border-r-0 2xl:min-h-64">
             {point.stars && (
               <div class="mb-4 flex flex-col items-center">
                 <div class="top-rated-badge mb-4 inline-flex items-center gap-2 rounded-full border border-[#f6c56b]/30 bg-[#f6c56b]/10 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#f6c56b]">
@@ -108,14 +119,16 @@ const proofPoints = [
                 </div>
               </div>
             )}
-            <p class="theme-strong text-5xl font-semibold tracking-tighter sm:text-6xl">
+            <p class="theme-strong text-5xl font-semibold tracking-tighter sm:text-6xl 2xl:text-7xl">
+              <span class="sr-only">{formatProofValue(point)}</span>
               <span
+                aria-hidden="true"
                 data-count-up
                 data-target={String(point.target)}
                 data-decimals={String(point.decimals ?? 0)}
                 data-suffix={point.suffix ?? ""}
               >
-                0
+                {formatProofValue(point)}
               </span>
             </p>
             
@@ -128,7 +141,7 @@ const proofPoints = [
     </div>
   </div>
 
-  <div class="relative mx-auto mt-12 w-full max-w-7xl overflow-hidden" data-reveal="soft">
+  <div class="relative mx-auto mt-12 w-full max-w-7xl overflow-hidden 2xl:mt-16 2xl:max-w-screen-2xl" data-reveal="soft">
     <div class="testimonial-track flex gap-6">
       {
         testimonials.concat(testimonials).map((testimonial) => (
@@ -189,11 +202,11 @@ const proofPoints = [
     <div class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-dark-surface to-transparent"></div>
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-dark-surface to-transparent"></div>
 
-    <div class="relative z-10 mx-auto flex min-h-64 w-full max-w-7xl flex-col items-center justify-center text-center">
+    <div class="relative z-10 mx-auto flex min-h-64 w-full max-w-7xl flex-col items-center justify-center text-center 2xl:max-w-screen-2xl">
       <p class="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">
         Global Delivery
       </p>
-      <h3 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tighter text-white sm:text-5xl">
+      <h3 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tighter text-white sm:text-5xl 2xl:max-w-4xl 2xl:text-6xl">
         Trusted by businesses
         <span class="text-violet-200">{" "}across the globe.</span>
       </h3>
@@ -306,13 +319,6 @@ const proofPoints = [
   if (countGroup && counters.length) {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const setFinalValue = (counter) => {
-      const target = Number(counter.dataset.target || "0");
-      const decimals = Number(counter.dataset.decimals || "0");
-      const suffix = counter.dataset.suffix || "";
-      counter.textContent = `${target.toFixed(decimals)}${suffix}`;
-    };
-
     const animateCounter = (counter) => {
       const target = Number(counter.dataset.target || "0");
       const decimals = Number(counter.dataset.decimals || "0");
@@ -334,9 +340,7 @@ const proofPoints = [
       requestAnimationFrame(frame);
     };
 
-    if (reduceMotion) {
-      counters.forEach(setFinalValue);
-    } else {
+    if (!reduceMotion) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
